@@ -1,6 +1,5 @@
 import { HomeHero } from "@/components/layout";
-import { Section, Container, ContentGrid } from "@/components/layout";
-import Image from "next/image";
+import { Section, ContentGrid } from "@/components/layout";
 import Link from "next/link";
 import { ArrowRight, Instagram, Palette, Home as HomeIcon, Heart } from "lucide-react";
 
@@ -98,7 +97,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-6">
-              Hi, I'm Ashley Rose
+              Hi, I&apos;m Ashley Rose
             </h2>
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
               <p>
@@ -208,6 +207,7 @@ interface ProjectCardProps {
   link: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function ProjectCard({ image, title, description, link }: ProjectCardProps) {
   return (
     <Link href={link} className="group">
