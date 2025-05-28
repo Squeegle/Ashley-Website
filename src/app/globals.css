@@ -47,6 +47,9 @@
 /* Base styles with enhanced visibility */
 * {
   box-sizing: border-box;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
 body {
@@ -54,15 +57,14 @@ body {
   color: var(--text-primary);
   font-family: var(--font-sans), system-ui, sans-serif;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   opacity: 1 !important;
 }
 
 /* Ensure no elements have unwanted opacity */
 main, section, div, p, h1, h2, h3, h4, h5, h6, span, a {
   opacity: 1 !important;
+  visibility: visible !important;
+  color: inherit !important;
 }
 
 /* Typography improvements with better contrast */
@@ -303,4 +305,85 @@ img {
 .bg-high-contrast {
   background-color: #ffffff !important;
   color: #000000 !important;
+}
+
+/* Enhanced text visibility for hero sections */
+.hero-text {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+/* Improve readability on light backgrounds */
+.text-dark-readable {
+  color: #1f2937 !important;
+  font-weight: 500;
+}
+
+/* Better contrast for gray text */
+.text-gray-enhanced {
+  color: #374151 !important;
+  font-weight: 500;
+}
+
+/* Force maximum visibility for all text elements */
+* {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Aggressive text visibility fixes */
+p, span, div, label, input, textarea, select, h1, h2, h3, h4, h5, h6, a, button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: inherit !important;
+}
+
+/* Specific fixes for form elements */
+input, textarea, select {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+/* Force visibility for all gray text variants */
+.text-gray-50 { color: #f9fafb !important; }
+.text-gray-100 { color: #f3f4f6 !important; }
+.text-gray-200 { color: #e5e7eb !important; }
+.text-gray-300 { color: #d1d5db !important; }
+.text-gray-400 { color: #9ca3af !important; }
+.text-gray-500 { color: #6b7280 !important; font-weight: 500 !important; }
+.text-gray-600 { color: #4b5563 !important; font-weight: 500 !important; }
+.text-gray-700 { color: #374151 !important; font-weight: 600 !important; }
+.text-gray-800 { color: #1f2937 !important; font-weight: 600 !important; }
+.text-gray-900 { color: #111827 !important; font-weight: 700 !important; }
+
+/* Ensure contact form sections are clearly visible */
+section, .bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+/* Force all text to be visible in contact forms */
+form * {
+  color: #111827 !important;
+  opacity: 1 !important;
+}
+
+form label {
+  color: #111827 !important;
+  font-weight: 600 !important;
+}
+
+form p {
+  color: #374151 !important;
+  font-weight: 500 !important;
 }

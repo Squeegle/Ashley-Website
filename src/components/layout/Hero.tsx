@@ -112,14 +112,14 @@ export default function Hero({
 
             {/* Title */}
             {title && (
-              <h1 className={`text-3xl md:text-5xl lg:text-6xl font-serif ${textColorClasses[textColor]} mb-4 md:mb-6 leading-tight`}>
+              <h1 className={`text-3xl md:text-5xl lg:text-6xl font-serif ${textColorClasses[textColor]} mb-4 md:mb-6 leading-tight font-semibold text-shadow`}>
                 {title}
               </h1>
             )}
 
             {/* Description */}
             {description && (
-              <p className={`text-base md:text-lg ${textColorClasses[textColor]} mb-6 md:mb-8 leading-relaxed max-w-2xl`}>
+              <p className={`text-base md:text-lg ${textColorClasses[textColor]} mb-6 md:mb-8 leading-relaxed max-w-2xl font-medium text-shadow-sm`}>
                 {description}
               </p>
             )}
@@ -171,13 +171,13 @@ export function HomeHero() {
       {/* Content */}
       <div className="relative text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <p className="text-sm md:text-base font-semibold uppercase tracking-wide text-contrast mb-2 md:mb-4">
+          <p className="text-sm md:text-base font-bold uppercase tracking-wide text-gray-900 mb-2 md:mb-4">
             Interior Design & Lifestyle
           </p>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-contrast mb-4 md:mb-6 leading-tight font-medium">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 mb-4 md:mb-6 leading-tight font-bold">
             Creating Spaces That Tell Your Story
           </h1>
-          <p className="text-base md:text-lg text-contrast mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-base md:text-lg text-gray-800 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-semibold">
             Transform your home into a reflection of your personality with thoughtful design, curated aesthetics, and functional beauty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -246,6 +246,7 @@ export function PageBanner({
       height="medium"
       textPosition="center"
       overlay="dark"
+      textColor="white"
     />
   );
 } 

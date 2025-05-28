@@ -83,10 +83,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content */}
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-serif text-gray-900 mb-6">
+              <h2 className="text-3xl lg:text-4xl font-serif text-black mb-6 font-bold">
                 Hello, I&apos;m Ashley Rose
               </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-gray-800 leading-relaxed font-semibold">
                 <p>
                   With over a decade of experience in interior design, I believe that every space has the potential to be extraordinary. My passion lies in creating environments that are not only beautiful but also deeply personal and functional for the people who live and work in them.
                 </p>
@@ -118,10 +118,10 @@ export default function AboutPage() {
       <Section className="py-16 lg:py-24 bg-gray-50">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-serif text-gray-900 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-serif text-black mb-6 font-bold">
               My Journey
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-800 max-w-2xl mx-auto leading-relaxed font-semibold">
               From my first design assistant role to founding my own studio, here&apos;s how my passion for interior design has evolved over the years.
             </p>
           </div>
@@ -145,14 +145,14 @@ export default function AboutPage() {
                           <div className="inline-block bg-white rounded-lg shadow-sm border border-gray-200 p-6 max-w-md ml-auto">
                             <div className="flex items-center justify-end mb-4">
                               <div className="mr-3">
-                                <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                                <p className="text-sm text-gray-500">{item.year}</p>
+                                <h3 className="text-lg font-bold text-black">{item.title}</h3>
+                                <p className="text-sm text-gray-700 font-semibold">{item.year}</p>
                               </div>
                               <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
                                 <IconComponent size={20} className="text-gray-600" />
                               </div>
                             </div>
-                            <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                            <p className="text-gray-800 text-sm leading-relaxed font-semibold">{item.description}</p>
                           </div>
                         </div>
                       )}
@@ -169,11 +169,11 @@ export default function AboutPage() {
                                 <IconComponent size={20} className="text-gray-600" />
                               </div>
                               <div>
-                                <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                                <p className="text-sm text-gray-500">{item.year}</p>
+                                <h3 className="text-lg font-bold text-black">{item.title}</h3>
+                                <p className="text-sm text-gray-700 font-semibold">{item.year}</p>
                               </div>
                             </div>
-                            <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                            <p className="text-gray-800 text-sm leading-relaxed font-semibold">{item.description}</p>
                           </div>
                         </div>
                       )}
@@ -191,11 +191,11 @@ export default function AboutPage() {
                             <IconComponent size={20} className="text-gray-600" />
                           </div>
                           <div>
-                            <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                            <p className="text-sm text-gray-500">{item.year}</p>
+                            <h3 className="text-lg font-bold text-black">{item.title}</h3>
+                            <p className="text-sm text-gray-700 font-semibold">{item.year}</p>
                           </div>
                         </div>
-                        <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                        <p className="text-gray-800 text-sm leading-relaxed font-semibold">{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -210,10 +210,10 @@ export default function AboutPage() {
       <Section className="py-16 lg:py-24">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-serif text-gray-900 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-serif text-black mb-6 font-bold">
               Skills & Services
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-800 max-w-2xl mx-auto leading-relaxed font-semibold">
               I offer a comprehensive range of design services to transform your space into something truly special.
             </p>
           </div>
@@ -227,8 +227,8 @@ export default function AboutPage() {
                   <div className={`w-16 h-16 ${skill.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent size={28} />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{skill.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{skill.description}</p>
+                  <h3 className="text-xl font-bold text-black mb-4">{skill.title}</h3>
+                  <p className="text-gray-800 leading-relaxed font-semibold">{skill.description}</p>
                 </div>
               );
             })}
@@ -240,24 +240,24 @@ export default function AboutPage() {
       <Section className="py-16 lg:py-24 bg-gray-50">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-serif text-gray-900 mb-8">
+            <h2 className="text-3xl lg:text-4xl font-serif text-black mb-8 font-bold">
               My Design Philosophy
             </h2>
-            <blockquote className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8 font-light italic">
+            <blockquote className="text-xl lg:text-2xl text-black leading-relaxed mb-8 font-semibold italic">
               &ldquo;Great design is not just about making things beautiful – it&apos;s about creating spaces that enhance the way people live, work, and feel.&rdquo;
             </blockquote>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Functionality First</h4>
-                <p className="text-gray-600">Every design decision prioritizes how you actually use your space.</p>
+                <h4 className="text-lg font-bold text-black mb-2">Functionality First</h4>
+                <p className="text-gray-800 font-semibold">Every design decision prioritizes how you actually use your space.</p>
               </div>
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Personal Expression</h4>
-                <p className="text-gray-600">Your personality and lifestyle should shine through in every detail.</p>
+                <h4 className="text-lg font-bold text-black mb-2">Personal Expression</h4>
+                <p className="text-gray-800 font-semibold">Your personality and lifestyle should shine through in every detail.</p>
               </div>
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Timeless Beauty</h4>
-                <p className="text-gray-600">Creating designs that will feel fresh and relevant for years to come.</p>
+                <h4 className="text-lg font-bold text-black mb-2">Timeless Beauty</h4>
+                <p className="text-gray-800 font-semibold">Creating designs that will feel fresh and relevant for years to come.</p>
               </div>
             </div>
           </div>
