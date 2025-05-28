@@ -52,7 +52,7 @@ export default function ContactPage() {
     { value: '15k-30k', label: '$15,000 - $30,000' },
     { value: '30k-50k', label: '$30,000 - $50,000' },
     { value: 'over-50k', label: 'Over $50,000' },
-    { value: 'discuss', label: 'Let\'s Discuss' }
+    { value: 'discuss', label: 'Let&apos;s Discuss' }
   ];
 
   // Contact information
@@ -211,6 +211,7 @@ export default function ContactPage() {
       setUploadedFiles([]);
       
     } catch (error) {
+      console.error('Form submission error:', error);
       setErrors({ submit: 'Something went wrong. Please try again.' });
     } finally {
       setIsSubmitting(false);
@@ -235,8 +236,8 @@ export default function ContactPage() {
               Get In Touch
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Whether you're planning a complete home makeover or need design guidance for a single room, 
-              I'm here to help bring your vision to life.
+              Whether you&apos;re planning a complete home makeover or need design guidance for a single room, 
+              I&apos;m here to help bring your vision to life.
             </p>
           </div>
 
@@ -276,7 +277,7 @@ export default function ContactPage() {
                 Start Your Project
               </h2>
               <p className="text-gray-600 leading-relaxed">
-                Tell us about your project and vision. We'll get back to you within 24 hours to discuss how we can help.
+                Tell us about your project and vision. We&apos;ll get back to you within 24 hours to discuss how we can help.
               </p>
             </div>
 
@@ -288,7 +289,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Thank You!</h3>
                 <p className="text-gray-600 mb-6">
-                  Your message has been sent successfully. I'll review your project details and get back to you within 24 hours.
+                  Your message has been sent successfully. I&apos;ll review your project details and get back to you within 24 hours.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}

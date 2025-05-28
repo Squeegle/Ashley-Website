@@ -1,5 +1,5 @@
 import { PageBanner, Container, Section } from '@/components/layout';
-import { Calendar, Award, Users, Heart, Palette, Home, Building, Coffee } from 'lucide-react';
+import { Award, Users, Heart, Palette, Home, Building, Coffee } from 'lucide-react';
 
 /**
  * About Page Component
@@ -84,7 +84,7 @@ export default function AboutPage() {
             {/* Text Content */}
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-serif text-gray-900 mb-6">
-                Hello, I'm Ashley Rose
+                Hello, I&apos;m Ashley Rose
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
@@ -122,7 +122,7 @@ export default function AboutPage() {
               My Journey
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              From my first design assistant role to founding my own studio, here's how my passion for interior design has evolved over the years.
+              From my first design assistant role to founding my own studio, here&apos;s how my passion for interior design has evolved over the years.
             </p>
           </div>
 
@@ -244,7 +244,7 @@ export default function AboutPage() {
               My Design Philosophy
             </h2>
             <blockquote className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8 font-light italic">
-              "Great design is not just about making things beautiful – it's about creating spaces that enhance the way people live, work, and feel."
+              &ldquo;Great design is not just about making things beautiful – it&apos;s about creating spaces that enhance the way people live, work, and feel.&rdquo;
             </blockquote>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
