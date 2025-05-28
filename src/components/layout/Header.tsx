@@ -43,14 +43,14 @@ export default function Header() {
             
             {/* Right side - Social links */}
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">Follow us:</span>
+              <span className="text-sm text-contrast font-medium">Follow us:</span>
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
                   <Link
                     key={social.name}
                     href={social.href}
-                    className={`text-gray-500 ${social.color} transition-colors duration-200`}
+                    className={`text-contrast ${social.color} transition-colors duration-200`}
                     aria-label={social.name}
                   >
                     <IconComponent size={18} />
@@ -68,7 +68,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+            className="md:hidden p-2 rounded-md text-muted hover:text-primary hover:bg-gray-100 transition-colors duration-200"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,10 +77,10 @@ export default function Header() {
           {/* Logo/Brand Name - Centered on desktop, left on mobile */}
           <div className="flex-1 md:flex-none md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
             <Link href="/" className="block">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-gray-900 text-center md:text-center">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-contrast text-center md:text-center text-crisp font-medium">
                 Ashley Rose
               </h1>
-              <p className="text-sm text-gray-600 text-center mt-1 font-light tracking-wide">
+              <p className="text-sm text-contrast text-center mt-1 font-semibold tracking-wide">
                 Interior Design & Lifestyle
               </p>
             </Link>
@@ -89,7 +89,7 @@ export default function Header() {
           {/* Search icon - Desktop */}
           <div className="hidden md:block">
             <button
-              className="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+              className="p-2 rounded-md text-muted hover:text-primary hover:bg-gray-100 transition-colors duration-200"
               aria-label="Search"
             >
               <Search size={20} />
@@ -104,7 +104,7 @@ export default function Header() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="text-gray-700 hover:text-gray-900 font-medium text-sm lg:text-base tracking-wide uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-300"
+                  className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
                 >
                   {item.name}
                 </Link>
@@ -123,7 +123,7 @@ export default function Header() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="block text-gray-700 hover:text-gray-900 font-medium py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
+                    className="block text-contrast hover:text-gray-800 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -141,7 +141,7 @@ export default function Header() {
                     <Link
                       key={social.name}
                       href={social.href}
-                      className={`text-gray-500 ${social.color} transition-colors duration-200`}
+                      className={`text-contrast ${social.color} transition-colors duration-200`}
                       aria-label={social.name}
                     >
                       <IconComponent size={20} />

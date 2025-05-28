@@ -17,10 +17,10 @@ export default function Home() {
       {/* Services Section */}
       <Section spacing="large" background="gray">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
             How We Can Help
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-body-large max-w-3xl mx-auto text-contrast font-medium">
             From full-scale renovations to simple styling consultations, 
             we create spaces that reflect your unique story and lifestyle.
           </p>
@@ -28,19 +28,19 @@ export default function Home() {
 
         <ContentGrid maxColumns={3}>
           <ServiceCard
-            icon={<HomeIcon className="w-12 h-12" />}
+            icon={<HomeIcon className="w-12 h-12 text-contrast" />}
             title="Full Home Design"
             description="Complete interior design services from concept to completion, creating cohesive spaces throughout your home."
             link="/services/interior-design"
           />
           <ServiceCard
-            icon={<Palette className="w-12 h-12" />}
+            icon={<Palette className="w-12 h-12 text-contrast" />}
             title="Design Consultations"
             description="Expert guidance and personalized recommendations to help you make confident design decisions."
             link="/services/consultations"
           />
           <ServiceCard
-            icon={<Heart className="w-12 h-12" />}
+            icon={<Heart className="w-12 h-12 text-contrast" />}
             title="Virtual Styling"
             description="Professional design services delivered remotely, perfect for any budget or timeline."
             link="/services/virtual-design"
@@ -51,10 +51,10 @@ export default function Home() {
       {/* Featured Work Section */}
       <Section spacing="large">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
             Recent Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-body-large max-w-3xl mx-auto text-contrast font-medium">
             Take a peek inside some of our favorite recent transformations, 
             where functionality meets beauty in every detail.
           </p>
@@ -84,7 +84,7 @@ export default function Home() {
         <div className="text-center mt-12">
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-medium"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
           >
             View All Projects
             <ArrowRight className="w-4 h-4" />
@@ -96,16 +96,16 @@ export default function Home() {
       <Section spacing="large" background="gray">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-6">
               Hi, I&apos;m Ashley Rose
             </h2>
-            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-              <p>
+            <div className="space-y-4 text-body-large leading-relaxed">
+              <p className="text-contrast font-medium">
                 I believe that your home should tell your story—every room should reflect 
                 who you are and how you live. With over 8 years of experience in interior 
                 design, I specialize in creating spaces that are both beautiful and deeply personal.
               </p>
-              <p>
+              <p className="text-contrast font-medium">
                 My approach combines timeless design principles with fresh, contemporary touches, 
                 ensuring your space feels collected rather than decorated. I love mixing high and 
                 low pieces, vintage finds with modern furniture, and always prioritize function 
@@ -115,14 +115,14 @@ export default function Home() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-medium"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
               >
                 Learn More About Me
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-md hover:border-gray-400 transition-colors duration-200 font-medium"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-md hover:border-gray-800 hover:bg-gray-900 hover:text-white transition-colors duration-200 font-semibold"
               >
                 <Instagram className="w-4 h-4" />
                 Follow My Journey
@@ -131,10 +131,10 @@ export default function Home() {
           </div>
           <div className="relative">
             <div className="relative h-96 md:h-[32rem] rounded-lg overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-              <div className="text-center text-gray-500">
+              <div className="text-center">
                 <div className="text-6xl mb-4">👩‍🎨</div>
-                <p className="text-sm font-medium">Ashley Rose Portrait</p>
-                <p className="text-xs">Coming Soon</p>
+                <p className="text-sm font-semibold text-contrast">Ashley Rose Portrait</p>
+                <p className="text-xs text-contrast font-medium">Coming Soon</p>
               </div>
             </div>
           </div>
@@ -144,15 +144,15 @@ export default function Home() {
       {/* Instagram Section */}
       <Section spacing="medium">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
             Follow Along
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-body-large mb-8 text-contrast font-medium">
             Get daily design inspiration and behind-the-scenes glimpses on Instagram
           </p>
           <Link
             href="#"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-md hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-medium"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-md hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-semibold"
           >
             <Instagram className="w-5 h-5" />
             @ashleyrose.design
@@ -183,12 +183,12 @@ interface ServiceCardProps {
 function ServiceCard({ icon, title, description, link }: ServiceCardProps) {
   return (
     <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
-      <div className="text-gray-700 mb-4">{icon}</div>
-      <h3 className="text-xl font-serif text-gray-900 mb-4">{title}</h3>
-      <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
+      <div className="text-contrast mb-4">{icon}</div>
+      <h3 className="text-xl font-serif text-contrast mb-4 font-medium">{title}</h3>
+      <p className="text-contrast mb-6 leading-relaxed font-medium">{description}</p>
       <Link
         href={link}
-        className="inline-flex items-center gap-2 text-gray-900 font-medium hover:gap-3 transition-all duration-200"
+        className="inline-flex items-center gap-2 text-contrast font-semibold hover:gap-3 transition-all duration-200 hover:text-gray-800"
       >
         Learn More
         <ArrowRight className="w-4 h-4" />
@@ -224,10 +224,10 @@ function ProjectCard({ image, title, description, link }: ProjectCardProps) {
           /> */}
         </div>
         <div className="p-6">
-          <h3 className="text-lg font-serif text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-200">
+          <h3 className="text-lg font-serif text-contrast mb-2 group-hover:text-gray-800 transition-colors duration-200 font-medium">
             {title}
           </h3>
-          <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+          <p className="text-contrast text-sm leading-relaxed font-medium">{description}</p>
         </div>
       </div>
     </Link>

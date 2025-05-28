@@ -105,7 +105,7 @@ export default function Hero({
           <div className="max-w-3xl">
             {/* Subtitle */}
             {subtitle && (
-              <p className={`text-sm md:text-base font-medium uppercase tracking-wide ${textColorClasses[textColor]} opacity-90 mb-2 md:mb-4`}>
+              <p className={`text-sm md:text-base font-medium uppercase tracking-wide ${textColorClasses[textColor]} mb-2 md:mb-4`}>
                 {subtitle}
               </p>
             )}
@@ -119,7 +119,7 @@ export default function Hero({
 
             {/* Description */}
             {description && (
-              <p className={`text-base md:text-lg ${textColorClasses[textColor]} opacity-90 mb-6 md:mb-8 leading-relaxed max-w-2xl`}>
+              <p className={`text-base md:text-lg ${textColorClasses[textColor]} mb-6 md:mb-8 leading-relaxed max-w-2xl`}>
                 {description}
               </p>
             )}
@@ -171,25 +171,25 @@ export function HomeHero() {
       {/* Content */}
       <div className="relative text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <p className="text-sm md:text-base font-medium uppercase tracking-wide text-gray-700 opacity-90 mb-2 md:mb-4">
+          <p className="text-sm md:text-base font-semibold uppercase tracking-wide text-contrast mb-2 md:mb-4">
             Interior Design & Lifestyle
           </p>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 mb-4 md:mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-contrast mb-4 md:mb-6 leading-tight font-medium">
             Creating Spaces That Tell Your Story
           </h1>
-          <p className="text-base md:text-lg text-gray-700 opacity-90 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-contrast mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-medium">
             Transform your home into a reflection of your personality with thoughtful design, curated aesthetics, and functional beauty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/gallery"
-              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white font-medium rounded-md hover:bg-gray-800 transition-colors duration-200 shadow-lg"
+              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white font-semibold rounded-md hover:bg-gray-800 transition-colors duration-200 shadow-lg"
             >
               View Our Work
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-medium rounded-md transition-colors duration-200"
+              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold rounded-md transition-colors duration-200"
             >
               Get Started
             </Link>

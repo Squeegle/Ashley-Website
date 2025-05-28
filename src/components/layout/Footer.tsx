@@ -57,10 +57,10 @@ export default function Footer() {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
           <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-serif text-gray-900 mb-4">
+            <h3 className="text-2xl md:text-3xl font-serif text-contrast mb-4 font-medium">
               Stay Inspired
             </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-contrast mb-6 leading-relaxed font-medium">
               Get weekly design inspiration, styling tips, and exclusive content delivered to your inbox.
             </p>
             
@@ -69,18 +69,18 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent text-contrast font-medium"
                 required
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-medium"
+                className="px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
               >
                 Subscribe
               </button>
             </form>
             
-            <p className="text-xs text-gray-500 mt-3">
+            <p className="text-xs text-contrast mt-3 font-medium">
               No spam, unsubscribe at any time.
             </p>
           </div>
@@ -93,8 +93,8 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h2 className="text-xl font-serif text-gray-900 mb-2">Ashley Rose</h2>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <h2 className="text-xl font-serif text-contrast mb-2 font-medium">Ashley Rose</h2>
+              <p className="text-sm text-contrast leading-relaxed font-medium">
                 Creating beautiful, functional spaces that tell your story. 
                 Interior design and lifestyle inspiration for the modern home.
               </p>
@@ -108,7 +108,7 @@ export default function Footer() {
                   <Link
                     key={social.name}
                     href={social.href}
-                    className={`text-gray-400 ${social.color} transition-colors duration-200`}
+                    className={`text-contrast ${social.color} transition-colors duration-200`}
                     aria-label={social.name}
                   >
                     <IconComponent size={20} />
@@ -121,7 +121,7 @@ export default function Footer() {
           {/* Footer Navigation Sections */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
+              <h3 className="text-sm font-semibold text-contrast uppercase tracking-wide mb-4">
                 {section.title}
               </h3>
               <ul className="space-y-3">
@@ -129,7 +129,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                      className="text-sm text-contrast hover:text-gray-700 transition-colors duration-200 font-medium"
                     >
                       {link.name}
                     </Link>
@@ -145,7 +145,7 @@ export default function Footer() {
       <div className="border-t border-gray-200 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-1 text-sm text-gray-600 mb-4 md:mb-0">
+            <div className="flex items-center space-x-1 text-sm text-contrast mb-4 md:mb-0 font-medium">
               <span>© {new Date().getFullYear()} Ashley Rose Design.</span>
               <span>Made with</span>
               <Heart size={14} className="text-red-500 fill-current" />
@@ -153,10 +153,10 @@ export default function Footer() {
             </div>
             
             <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <Link href="/privacy" className="text-contrast hover:text-gray-700 transition-colors duration-200 font-medium">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+              <Link href="/terms" className="text-contrast hover:text-gray-700 transition-colors duration-200 font-medium">
                 Terms of Service
               </Link>
             </div>
