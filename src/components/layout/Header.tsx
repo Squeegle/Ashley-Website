@@ -63,7 +63,7 @@ export default function Header() {
 
       {/* Main header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-6">
+        <div className="flex items-center py-6">
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -73,10 +73,10 @@ export default function Header() {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Logo/Brand Name - Centered on desktop, left on mobile */}
-          <div className="flex-1 md:flex-none md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+          {/* Logo/Brand Name - Centered */}
+          <div className="flex-1 flex justify-center md:justify-center">
             <Link href="/" className="block">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-contrast text-center md:text-center text-crisp font-medium">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-contrast text-center text-crisp font-medium">
                 At home with Rose
               </h1>
               <p className="text-sm text-contrast text-center mt-1 font-semibold tracking-wide">
@@ -84,9 +84,6 @@ export default function Header() {
               </p>
             </Link>
           </div>
-
-          {/* Empty div for layout balance */}
-          <div className="hidden md:block w-10"></div>
         </div>
 
         {/* Desktop Navigation */}
