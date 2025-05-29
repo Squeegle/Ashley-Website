@@ -115,7 +115,7 @@ export default function Home() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white dark-button-text rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
               >
                 Learn More About Me
                 <ArrowRight className="w-4 h-4" />

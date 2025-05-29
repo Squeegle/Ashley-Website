@@ -387,3 +387,42 @@ form p {
   color: #374151 !important;
   font-weight: 500 !important;
 }
+
+/* Ensure dark buttons have proper white text */
+.bg-gray-900, .bg-gray-800, .bg-black {
+  color: #ffffff !important;
+}
+
+.bg-gray-900 *, .bg-gray-800 *, .bg-black * {
+  color: #ffffff !important;
+}
+
+/* Specific button styling to ensure white text on dark backgrounds */
+button.bg-gray-900, 
+a.bg-gray-900,
+.bg-gray-900 button,
+.bg-gray-900 a {
+  color: #ffffff !important;
+}
+
+button.bg-gray-800, 
+a.bg-gray-800,
+.bg-gray-800 button,
+.bg-gray-800 a {
+  color: #ffffff !important;
+}
+
+/* Override any inherited color for dark button text */
+.dark-button-text {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+}
+
+/* Ensure hover states maintain white text */
+.bg-gray-900:hover, .bg-gray-800:hover {
+  color: #ffffff !important;
+}
+
+.bg-gray-900:hover *, .bg-gray-800:hover * {
+  color: #ffffff !important;
+}

@@ -293,7 +293,7 @@ export default function ContactPage() {
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-md hover:bg-gray-800 transition-colors duration-200"
+                  className="inline-flex items-center px-6 py-3 bg-gray-900 text-white dark-button-text font-medium rounded-md hover:bg-gray-800 transition-colors duration-200"
                 >
                   Send Another Message
                 </button>
@@ -482,7 +482,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-md hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200"
+                      className="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white dark-button-text font-medium rounded-md hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200"
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
