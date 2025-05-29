@@ -7,8 +7,8 @@ import { BlogPost } from "@/types";
 
 /**
  * Homepage - Ashley Rose Interior Design & Lifestyle
- * Features the main hero section, recent blogs, recent work,
- * and about section in the style of chrislovesjulia.com
+ * Features the main hero section, about section, recent blogs, recent work,
+ * and Instagram section in the style of chrislovesjulia.com
  */
 export default async function Home() {
   // Fetch recent blog posts for the homepage
@@ -19,83 +19,7 @@ export default async function Home() {
       {/* Hero Section - Large image with overlaid text */}
       <HomeHero />
 
-      {/* Recent Blogs Section */}
-      <Section spacing="large" background="gray">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
-            Recent Blogs
-          </h2>
-          <p className="text-body-large max-w-3xl mx-auto text-contrast font-medium">
-            Discover the latest interior design tips, DIY tutorials, and lifestyle inspiration 
-            to help you create the home of your dreams.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {recentBlogs.map((blog) => (
-            <BlogCard
-              key={blog.id}
-              blog={blog}
-            />
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
-          >
-            View All Posts
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </Section>
-
-      {/* Featured Work Section */}
-      <Section spacing="large">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
-            Recent Projects
-          </h2>
-          <p className="text-body-large max-w-3xl mx-auto text-contrast font-medium">
-            Take a peek inside some of our favorite recent transformations, 
-            where functionality meets beauty in every detail.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <ProjectCard
-            image="/images/project-1.jpg"
-            title="Modern Coastal Living Room"
-            description="A serene space combining natural textures with contemporary comfort."
-            link="/projects/modern-coastal-living-room"
-          />
-          <ProjectCard
-            image="/images/project-2.jpg"
-            title="Scandinavian Kitchen Remodel"
-            description="Clean lines and warm woods create the perfect family gathering space."
-            link="/projects/scandinavian-kitchen-refresh"
-          />
-          <ProjectCard
-            image="/images/project-3.jpg"
-            title="Bohemian Master Bedroom"
-            description="A dreamy retreat featuring rich textures and curated vintage finds."
-            link="/projects/bohemian-bedroom-makeover"
-          />
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
-          >
-            View All Projects
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </Section>
-
-      {/* About Section */}
+      {/* About Section - Hi, I'm Ashley Rose */}
       <Section spacing="large" background="gray">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div>
@@ -141,6 +65,82 @@ export default async function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Recent Blogs Section */}
+      <Section spacing="large">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
+            Recent Blogs
+          </h2>
+          <p className="text-body-large max-w-3xl mx-auto text-contrast font-medium">
+            Discover the latest interior design tips, DIY tutorials, and lifestyle inspiration 
+            to help you create the home of your dreams.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {recentBlogs.map((blog) => (
+            <BlogCard
+              key={blog.id}
+              blog={blog}
+            />
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
+          >
+            View All Posts
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </Section>
+
+      {/* Featured Work Section */}
+      <Section spacing="large" background="gray">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
+            Recent Projects
+          </h2>
+          <p className="text-body-large max-w-3xl mx-auto text-contrast font-medium">
+            Take a peek inside some of our favorite recent transformations, 
+            where functionality meets beauty in every detail.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <ProjectCard
+            image="/images/project-1.jpg"
+            title="Modern Coastal Living Room"
+            description="A serene space combining natural textures with contemporary comfort."
+            link="/projects/modern-coastal-living-room"
+          />
+          <ProjectCard
+            image="/images/project-2.jpg"
+            title="Scandinavian Kitchen Remodel"
+            description="Clean lines and warm woods create the perfect family gathering space."
+            link="/projects/scandinavian-kitchen-refresh"
+          />
+          <ProjectCard
+            image="/images/project-3.jpg"
+            title="Bohemian Master Bedroom"
+            description="A dreamy retreat featuring rich textures and curated vintage finds."
+            link="/projects/bohemian-bedroom-makeover"
+          />
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
+          >
+            View All Projects
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </Section>
 
