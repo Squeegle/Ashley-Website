@@ -191,7 +191,7 @@ export function HomeHero() {
               href="/contact"
               className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold rounded-md transition-colors duration-200"
             >
-              Let's collaborate
+              Let&apos;s collaborate
             </Link>
           </div>
         </div>
