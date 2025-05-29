@@ -117,19 +117,19 @@ export default async function Home() {
             image="/images/project-1.jpg"
             title="Modern Coastal Living Room"
             description="A serene space combining natural textures with contemporary comfort."
-            link="/projects/modern-coastal-living-room"
+            link="/projects/2024-01-20-modern-coastal-living-room"
           />
           <ProjectCard
             image="/images/project-2.jpg"
             title="Scandinavian Kitchen Remodel"
             description="Clean lines and warm woods create the perfect family gathering space."
-            link="/projects/scandinavian-kitchen-refresh"
+            link="/projects/2024-01-15-scandinavian-kitchen-refresh"
           />
           <ProjectCard
             image="/images/project-3.jpg"
             title="Bohemian Master Bedroom"
             description="A dreamy retreat featuring rich textures and curated vintage finds."
-            link="/projects/bohemian-bedroom-makeover"
+            link="/projects/2024-01-10-bohemian-bedroom-makeover"
           />
         </div>
 
