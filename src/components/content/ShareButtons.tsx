@@ -1,7 +1,7 @@
 'use client';
 
 import { BlogPost } from '@/types';
-import { Share2, Twitter, Facebook, Link2, Check } from 'lucide-react';
+import { Twitter, Facebook, Link2, Check } from 'lucide-react';
 import { useState } from 'react';
 
 /**
@@ -22,7 +22,6 @@ export default function ShareButtons({ post, className = '' }: ShareButtonsProps
   
   const url = typeof window !== 'undefined' ? window.location.href : '';
   const title = post.title;
-  const text = post.excerpt;
 
   const shareLinks = {
     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,

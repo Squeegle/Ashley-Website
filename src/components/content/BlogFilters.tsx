@@ -137,7 +137,7 @@ export default function BlogFilters({ currentCategory, currentSearch, totalPosts
           
           {currentSearch && (
             <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-              Search: "{currentSearch}"
+              Search: &ldquo;{currentSearch}&rdquo;
               <button
                 onClick={() => {
                   setSearchValue('');

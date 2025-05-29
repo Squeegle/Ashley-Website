@@ -12,11 +12,10 @@ import { Grid } from '@/components/layout';
 
 interface RelatedPostsProps {
   posts: BlogPost[];
-  currentPost: BlogPost;
   className?: string;
 }
 
-export default function RelatedPosts({ posts, currentPost, className = '' }: RelatedPostsProps) {
+export default function RelatedPosts({ posts, className = '' }: RelatedPostsProps) {
   if (posts.length === 0) {
     return null;
   }

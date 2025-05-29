@@ -147,7 +147,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {relatedPosts.length > 0 && (
         <Section spacing="large">
           <Container size="large">
-            <RelatedPosts posts={relatedPosts} currentPost={post} />
+            <RelatedPosts posts={relatedPosts} />
           </Container>
         </Section>
       )}
