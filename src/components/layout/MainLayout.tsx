@@ -1,5 +1,9 @@
+'use client';
+
 import Header from './Header';
 import Footer from './Footer';
+import NewsletterModal from '@/components/ui/NewsletterModal';
+import { useNewsletterModal } from '@/hooks/useNewsletterModal';
 
 /**
  * MainLayout Component - Wraps all pages with consistent header and footer
@@ -7,6 +11,7 @@ import Footer from './Footer';
  * - Consistent header and footer across all pages
  * - Proper spacing and structure
  * - Responsive layout foundation
+ * - Newsletter modal for first-time visitors
  * - Easy to maintain site-wide design changes
  */
 
@@ -16,6 +21,9 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children, className = '' }: MainLayoutProps) {
+  // Newsletter modal functionality
+  const { isVisible, hideModal } = useNewsletterModal();
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Header - sticky navigation */}
@@ -28,6 +36,12 @@ export default function MainLayout({ children, className = '' }: MainLayoutProps
       
       {/* Footer */}
       <Footer />
+
+      {/* Newsletter Modal - shows on first visit */}
+      <NewsletterModal 
+        isVisible={isVisible}
+        onClose={hideModal}
+      />
     </div>
   );
 } 
