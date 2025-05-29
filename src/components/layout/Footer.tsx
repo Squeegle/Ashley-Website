@@ -23,24 +23,6 @@ export default function Footer() {
         { name: 'Collaboration Opportunities', href: '/contact' },
       ],
     },
-    {
-      title: 'Services',
-      links: [
-        { name: 'Interior Design', href: '/services/interior-design' },
-        { name: 'Consultations', href: '/services/consultations' },
-        { name: 'Virtual Design', href: '/services/virtual-design' },
-        { name: 'Styling', href: '/services/styling' },
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Design Tips', href: '/blog/category/tips' },
-        { name: 'Inspiration', href: '/blog/category/inspiration' },
-        { name: 'Shopping Guides', href: '/blog/category/shopping' },
-        { name: 'Before & After', href: '/projects/before-after' },
-      ],
-    },
   ];
 
   // Social media links
