@@ -120,24 +120,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           )}
         </Container>
       </Section>
-
-      {/* Newsletter CTA */}
-      <Section spacing="large" background="gray">
-        <Container size="medium">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-6">
-              Never Miss a Project
-            </h2>
-            <p className="text-xl text-contrast font-medium mb-8 leading-relaxed">
-              Get weekly DIY tutorials, decor inspiration, and behind-the-scenes 
-              content delivered straight to your inbox
-            </p>
-            <div className="max-w-md mx-auto">
-              <NewsletterSignup placeholder="Enter your email address" />
-            </div>
-          </div>
-        </Container>
-      </Section>
     </div>
   );
 }
@@ -214,27 +196,5 @@ function BlogPagination({ currentPage, totalPages, category, search }: BlogPagin
         </Link>
       )}
     </nav>
-  );
-}
-
-/**
- * Newsletter Signup Component
- */
-function NewsletterSignup({ placeholder }: { placeholder: string }) {
-  return (
-    <form className="flex gap-2">
-      <input
-        type="email"
-        placeholder={placeholder}
-        className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-        required
-      />
-      <button
-        type="submit"
-        className="px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors font-semibold"
-      >
-        Subscribe
-      </button>
-    </form>
   );
 } 
