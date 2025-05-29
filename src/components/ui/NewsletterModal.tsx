@@ -58,7 +58,7 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
         setEmail('');
       }, 2000);
       
-    } catch (err) {
+    } catch {
       setError('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -126,7 +126,7 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
                 <Mail className="w-6 h-6 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Welcome aboard!</h3>
-              <p className="text-gray-600">You'll receive your first inspiration email soon.</p>
+              <p className="text-gray-600">You&apos;ll receive your first inspiration email soon.</p>
             </div>
           ) : (
             /* Sign-up form */
