@@ -1,51 +1,54 @@
 import { HomeHero } from "@/components/layout";
-import { Section, ContentGrid } from "@/components/layout";
+import { Section } from "@/components/layout";
 import Link from "next/link";
-import { ArrowRight, Instagram, Palette, Home as HomeIcon, Heart } from "lucide-react";
+import { ArrowRight, Instagram, Calendar, Clock } from "lucide-react";
+import { getAllBlogPosts } from "@/lib/blog";
+import { BlogPost } from "@/types";
 
 /**
  * Homepage - Ashley Rose Interior Design & Lifestyle
- * Features the main hero section, services overview, recent work,
+ * Features the main hero section, recent blogs, recent work,
  * and about section in the style of chrislovesjulia.com
  */
-export default function Home() {
+export default async function Home() {
+  // Fetch recent blog posts for the homepage
+  const { posts: recentBlogs } = await getAllBlogPosts({ limit: 3 });
+
   return (
     <div>
       {/* Hero Section - Large image with overlaid text */}
       <HomeHero />
 
-      {/* Services Section */}
+      {/* Recent Blogs Section */}
       <Section spacing="large" background="gray">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
-            How We Can Help
+            Recent Blogs
           </h2>
           <p className="text-body-large max-w-3xl mx-auto text-contrast font-medium">
-            From full-scale renovations to simple styling consultations, 
-            we create spaces that reflect your unique story and lifestyle.
+            Discover the latest interior design tips, DIY tutorials, and lifestyle inspiration 
+            to help you create the home of your dreams.
           </p>
         </div>
 
-        <ContentGrid maxColumns={3}>
-          <ServiceCard
-            icon={<HomeIcon className="w-12 h-12 text-contrast" />}
-            title="Full Home Design"
-            description="Complete interior design services from concept to completion, creating cohesive spaces throughout your home."
-            link="/services/interior-design"
-          />
-          <ServiceCard
-            icon={<Palette className="w-12 h-12 text-contrast" />}
-            title="Design Consultations"
-            description="Expert guidance and personalized recommendations to help you make confident design decisions."
-            link="/services/consultations"
-          />
-          <ServiceCard
-            icon={<Heart className="w-12 h-12 text-contrast" />}
-            title="Virtual Styling"
-            description="Professional design services delivered remotely, perfect for any budget or timeline."
-            link="/services/virtual-design"
-          />
-        </ContentGrid>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {recentBlogs.map((blog) => (
+            <BlogCard
+              key={blog.id}
+              blog={blog}
+            />
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
+          >
+            View All Posts
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </Section>
 
       {/* Featured Work Section */}
@@ -171,33 +174,6 @@ export default function Home() {
 }
 
 /**
- * Service Card Component
- */
-interface ServiceCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  link: string;
-}
-
-function ServiceCard({ icon, title, description, link }: ServiceCardProps) {
-  return (
-    <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
-      <div className="text-contrast mb-4">{icon}</div>
-      <h3 className="text-xl font-serif text-contrast mb-4 font-medium">{title}</h3>
-      <p className="text-contrast mb-6 leading-relaxed font-medium">{description}</p>
-      <Link
-        href={link}
-        className="inline-flex items-center gap-2 text-contrast font-semibold hover:gap-3 transition-all duration-200 hover:text-gray-800"
-      >
-        Learn More
-        <ArrowRight className="w-4 h-4" />
-      </Link>
-    </div>
-  );
-}
-
-/**
  * Project Card Component
  */
 interface ProjectCardProps {
@@ -228,6 +204,75 @@ function ProjectCard({ image, title, description, link }: ProjectCardProps) {
             {title}
           </h3>
           <p className="text-contrast text-sm leading-relaxed font-medium">{description}</p>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+/**
+ * Blog Card Component
+ */
+interface BlogCardProps {
+  blog: BlogPost;
+}
+
+function BlogCard({ blog }: BlogCardProps) {
+  // Format the published date to a readable format
+  const formattedDate = blog.publishedAt.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+
+  return (
+    <Link href={`/blog/${blog.slug}`} className="group">
+      <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
+        <div className="relative h-64 overflow-hidden">
+          <div className="w-full h-full bg-gray-200"></div>
+          {/* Placeholder for actual image */}
+          {/* <Image
+            src={blog.featuredImage}
+            alt={blog.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          /> */}
+        </div>
+        <div className="p-6">
+          {/* Blog metadata */}
+          <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
+            <div className="flex items-center gap-1">
+              <Calendar className="w-3 h-3" />
+              <span>{formattedDate}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Clock className="w-3 h-3" />
+              <span>{blog.readTime} min read</span>
+            </div>
+          </div>
+          <h3 className="text-lg font-serif text-contrast mb-2 group-hover:text-gray-800 transition-colors duration-200 font-medium">
+            {blog.title}
+          </h3>
+          <p className="text-contrast text-sm leading-relaxed font-medium mb-4">{blog.excerpt}</p>
+          {/* Tags display */}
+          {blog.tags && blog.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1 mb-4">
+              {blog.tags.slice(0, 2).map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
+                >
+                  {tag}
+                </span>
+              ))}
+              {blog.tags.length > 2 && (
+                <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                  +{blog.tags.length - 2}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </Link>
