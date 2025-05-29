@@ -37,9 +37,9 @@ export const mainNav: NavItem[] = [
     description: "DIY tutorials, decor tips, and lifestyle content"
   },
   {
-    title: "Gallery",
-    href: "/gallery",
-    description: "Visual inspiration and project showcases"
+    title: "Projects",
+    href: "/projects",
+    description: "Detailed project showcases with before & after transformations"
   },
   {
     title: "Collaboration Opportunities",

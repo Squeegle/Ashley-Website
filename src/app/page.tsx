@@ -65,25 +65,25 @@ export default function Home() {
             image="/images/project-1.jpg"
             title="Modern Coastal Living Room"
             description="A serene space combining natural textures with contemporary comfort."
-            link="/gallery/modern-coastal-living"
+            link="/projects/modern-coastal-living-room"
           />
           <ProjectCard
             image="/images/project-2.jpg"
             title="Scandinavian Kitchen Remodel"
             description="Clean lines and warm woods create the perfect family gathering space."
-            link="/gallery/scandinavian-kitchen"
+            link="/projects/scandinavian-kitchen-refresh"
           />
           <ProjectCard
             image="/images/project-3.jpg"
             title="Bohemian Master Bedroom"
             description="A dreamy retreat featuring rich textures and curated vintage finds."
-            link="/gallery/bohemian-bedroom"
+            link="/projects/bohemian-bedroom-makeover"
           />
         </div>
 
         <div className="text-center mt-12">
           <Link
-            href="/gallery"
+            href="/projects"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
           >
             View All Projects

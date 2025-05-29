@@ -19,7 +19,7 @@ export default function Footer() {
         { name: 'Home', href: '/' },
         { name: 'About', href: '/about' },
         { name: 'Blog', href: '/blog' },
-        { name: 'Gallery', href: '/gallery' },
+        { name: 'Projects', href: '/projects' },
         { name: 'Collaboration Opportunities', href: '/contact' },
       ],
     },
@@ -38,7 +38,7 @@ export default function Footer() {
         { name: 'Design Tips', href: '/blog/category/tips' },
         { name: 'Inspiration', href: '/blog/category/inspiration' },
         { name: 'Shopping Guides', href: '/blog/category/shopping' },
-        { name: 'Before & After', href: '/gallery/before-after' },
+        { name: 'Before & After', href: '/projects/before-after' },
       ],
     },
   ];
