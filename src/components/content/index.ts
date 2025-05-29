@@ -5,4 +5,7 @@ export { default as BlogFilters } from './BlogFilters';
 export { default as BlogContent } from './BlogContent';
 export { default as RelatedPosts } from './RelatedPosts';
 export { default as ShareButtons } from './ShareButtons';
-export { default as AuthorBio } from './AuthorBio'; 
+export { default as AuthorBio } from './AuthorBio';
+
+// Project-related content components
+export { default as ProjectFilters } from './ProjectFilters'; 
