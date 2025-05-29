@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Instagram, Facebook, Twitter, Search } from 'lucide-react';
+import { Menu, X, Instagram, Facebook, Twitter } from 'lucide-react';
 
 /**
  * Header Component - Main navigation and branding for the website
@@ -11,7 +11,6 @@ import { Menu, X, Instagram, Facebook, Twitter, Search } from 'lucide-react';
  * - Horizontal navigation with dropdown support
  * - Social media links
  * - Mobile-responsive hamburger menu
- * - Search functionality
  */
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -86,15 +85,8 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Search icon - Desktop */}
-          <div className="hidden md:block">
-            <button
-              className="p-2 rounded-md text-muted hover:text-primary hover:bg-gray-100 transition-colors duration-200"
-              aria-label="Search"
-            >
-              <Search size={20} />
-            </button>
-          </div>
+          {/* Empty div for layout balance */}
+          <div className="hidden md:block w-10"></div>
         </div>
 
         {/* Desktop Navigation */}
