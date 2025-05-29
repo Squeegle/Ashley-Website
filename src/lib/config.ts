@@ -42,7 +42,7 @@ export const mainNav: NavItem[] = [
     description: "Visual inspiration and project showcases"
   },
   {
-    title: "Contact",
+    title: "Collaboration Opportunities",
     href: "/contact",
     description: "Get in touch for collaborations and inquiries"
   }
