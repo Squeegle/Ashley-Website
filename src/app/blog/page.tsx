@@ -21,18 +21,21 @@ export const metadata: Metadata = {
 };
 
 interface BlogPageProps {
-  searchParams: {
+  searchParams: Promise<{
     category?: string;
     search?: string;
     page?: string;
-  };
+  }>;
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
+  // Await the searchParams Promise to get the actual parameters
+  const params = await searchParams;
+  
   // Get filter parameters
-  const category = searchParams.category || 'all';
-  const searchQuery = searchParams.search || '';
-  const currentPage = parseInt(searchParams.page || '1');
+  const category = params.category || 'all';
+  const searchQuery = params.search || '';
+  const currentPage = parseInt(params.page || '1');
   
   // Get filtered blog posts
   const { posts, totalPages, totalPosts } = await getAllBlogPosts({

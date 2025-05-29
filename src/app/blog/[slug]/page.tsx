@@ -16,10 +16,11 @@ import { BlogHero } from '@/components/layout';
  * - Newsletter signup CTA
  */
 
+// Updated interface to handle async params in Next.js 15+
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for all blog posts (for static generation)
@@ -31,9 +32,11 @@ export async function generateStaticParams() {
   }));
 }
 
-// Generate metadata for SEO
+// Generate metadata for SEO - Updated to await params
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getBlogPostBySlug(params.slug);
+  // Await the params Promise to get the actual slug
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     return {
@@ -68,8 +71,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
+// Updated main component to await params
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getBlogPostBySlug(params.slug);
+  // Await the params Promise to get the actual slug
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
