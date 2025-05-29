@@ -93,7 +93,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h2 className="text-xl font-serif text-contrast mb-2 font-medium">Ashley Rose</h2>
+              <h2 className="text-xl font-serif text-contrast mb-2 font-medium">At home with Rose</h2>
               <p className="text-sm text-contrast leading-relaxed font-medium">
                 Creating beautiful, functional spaces that tell your story. 
                 Interior design and lifestyle inspiration for the modern home.

@@ -19,24 +19,24 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ashley Rose | Interior Design & Lifestyle",
-    template: "%s | Ashley Rose"
+    default: "At home with Rose | Interior Design & Lifestyle",
+    template: "%s | At home with Rose"
   },
   description: "Creating beautiful, functional spaces that tell your story. Interior design and lifestyle inspiration for the modern home.",
   keywords: ["interior design", "home decor", "lifestyle", "design inspiration", "modern home"],
   authors: [{ name: "Ashley Rose" }],
   creator: "Ashley Rose",
   openGraph: {
-    title: "Ashley Rose | Interior Design & Lifestyle",
+    title: "At home with Rose | Interior Design & Lifestyle",
     description: "Creating beautiful, functional spaces that tell your story.",
     url: "https://ashleyrose.com",
-    siteName: "Ashley Rose",
+    siteName: "At home with Rose",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ashley Rose | Interior Design & Lifestyle",
+    title: "At home with Rose | Interior Design & Lifestyle",
     description: "Creating beautiful, functional spaces that tell your story.",
     creator: "@ashleyrose",
   },

@@ -78,7 +78,7 @@ export default function Header() {
           <div className="flex-1 md:flex-none md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
             <Link href="/" className="block">
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-contrast text-center md:text-center text-crisp font-medium">
-                Ashley Rose
+                At home with Rose
               </h1>
               <p className="text-sm text-contrast text-center mt-1 font-semibold tracking-wide">
                 Interior Design & Lifestyle

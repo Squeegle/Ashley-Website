@@ -1,11 +1,11 @@
 import { SiteConfig, NavItem } from "@/types"
 
 /**
- * Site configuration for Ashley Rose's website
+ * Site configuration for At home with Rose website
  * Central place to manage site metadata, navigation, and social links
  */
 export const siteConfig: SiteConfig = {
-  name: "Ashley Rose",
+  name: "At home with Rose",
   description: "DIY, Decor & Lifestyle Content Creator. Inspiring beautiful spaces and creative living through home projects, design tips, and lifestyle content.",
   url: "https://ashleyrose.com", // Update with actual domain
   ogImage: "https://ashleyrose.com/og.jpg", // Update with actual image
