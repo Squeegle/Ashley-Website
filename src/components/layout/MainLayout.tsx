@@ -1,8 +1,9 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import NewsletterModal from '@/components/ui/NewsletterModal';
+import { NewsletterModal, LandingSequence } from '@/components/ui';
 import { useNewsletterModal } from '@/hooks/useNewsletterModal';
 
 /**
@@ -11,7 +12,7 @@ import { useNewsletterModal } from '@/hooks/useNewsletterModal';
  * - Consistent header and footer across all pages
  * - Proper spacing and structure
  * - Responsive layout foundation
- * - Newsletter modal for first-time visitors
+ * - Newsletter modal for first-time visitors (after landing sequence)
  * - Easy to maintain site-wide design changes
  */
 
@@ -21,8 +22,28 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children, className = '' }: MainLayoutProps) {
+  const [landingSequenceComplete, setLandingSequenceComplete] = useState(false);
+  
   // Newsletter modal functionality
-  const { isVisible, hideModal } = useNewsletterModal();
+  // Pass landingSequenceComplete to the hook to control its timer
+  const { 
+    isVisible: isNewsletterVisible, 
+    showModal: showNewsletterModal, // We might not need showNewsletterModal directly here anymore
+    hideModal: hideNewsletterModal 
+  } = useNewsletterModal({ isReadyToShow: landingSequenceComplete });
+
+  const handleLandingComplete = () => {
+    setLandingSequenceComplete(true);
+    // No need to manually call showNewsletterModal here,
+    // as useNewsletterModal will now start its timer because isReadyToShow becomes true.
+  };
+  
+  // Conditionally render LandingSequence or the main content + newsletter
+  // The hook useNewsletterModal is called on every render, but its internal useEffect
+  // for the timer will only run/restart when landingSequenceComplete changes.
+  if (!landingSequenceComplete) {
+    return <LandingSequence onComplete={handleLandingComplete} />;
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -37,10 +58,10 @@ export default function MainLayout({ children, className = '' }: MainLayoutProps
       {/* Footer */}
       <Footer />
 
-      {/* Newsletter Modal - shows on first visit */}
+      {/* Newsletter Modal - shows on first visit AFTER landing sequence */}
       <NewsletterModal 
-        isVisible={isVisible}
-        onClose={hideModal}
+        isVisible={isNewsletterVisible}
+        onClose={hideNewsletterModal}
       />
     </div>
   );
