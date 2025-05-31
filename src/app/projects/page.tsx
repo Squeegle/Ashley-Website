@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Section, Container } from '@/components/layout';
 import { ProjectFilters } from '@/components/content';
 import { getAllProjects } from '@/lib/projects';
@@ -130,10 +131,12 @@ function ProjectCard({ project }: ProjectCardProps) {
       <article className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
         {/* Project Image */}
         <div className="relative h-64 overflow-hidden">
-          <img
+          <Image
             src={project.featuredImage}
             alt={project.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            fill
+            style={{ objectFit: 'cover' }}
+            className="group-hover:scale-105 transition-transform duration-500"
           />
           
           {/* Before/After Badge */}

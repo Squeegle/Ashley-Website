@@ -79,16 +79,6 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
   
   if (step === 5) return null; // Sequence finished, render nothing
 
-  // Determine opacity for Name Page
-  let namePageOpacity = 0;
-  if (step === 0 || step === 1) namePageOpacity = 1; // Fading in or fully visible
-  if (step === 2) namePageOpacity = 0; // Fading out
-
-  // Determine opacity for Icon Page
-  let iconPageOpacity = 0;
-  if (step === 2 || step === 3) iconPageOpacity = 1; // Fading in or fully visible
-  if (step === 4) iconPageOpacity = 0; // Fading out
-
   return (
     <>
       {/* Name Page */}
@@ -96,23 +86,15 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
         <div 
           style={{
             ...pageStyle,
-            opacity: (step === 1) ? 1 : ((step === 0 || step === 2) ? 0 : 0), // Fade in at step 0, fully visible at 1, fade out at 2
-            // More precise opacity control for smoother transitions:
-            // opacity: step === 0 ? 1 : (step === 1 ? 1 : (step === 2 ? 0 : 0)),
-            // For a simple fade in then fade out, this can be tricky with shared step for transition
-            // Let's use a simpler model: page is visible or not during its steps.
-            // Opacity is controlled by overall container fade for simplicity now.
-            // To do individual fade in/out of pages, more states or more complex style logic needed.
-            // Let's refine this part. The outer div will handle the fade out of the entire sequence for now.
-            // The individual pages will appear/disappear based on step.
+            opacity: (step === 1) ? 1 : ((step === 0 || step === 2) ? 0 : 0),
           }}
         >
           {(step === 0 || step === 1) && (
             <div 
               style={{
                 ...pageStyle,
-                opacity: step === 1 ? 1 : 0, // Name page content opacity
-                transition: `opacity ${FADE_DURATION}ms ease-in-out ${step === 0 ? '0ms' : '0ms'}`,
+                opacity: step === 1 ? 1 : 0,
+                transition: `opacity ${FADE_DURATION}ms ease-in-out`,
               }}
             >
               <div style={textStyle}>At home with Rose</div>
@@ -126,8 +108,8 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
          <div 
             style={{
               ...pageStyle,
-              opacity: step === 3 ? 1 : 0, // Icon page content opacity
-              transition: `opacity ${FADE_DURATION}ms ease-in-out ${step === 2 ? '0ms' : '0ms'}`,
+              opacity: step === 3 ? 1 : 0,
+              transition: `opacity ${FADE_DURATION}ms ease-in-out`,
             }}
           >
             <div style={iconStyle}>

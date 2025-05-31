@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { NewsletterModal, LandingSequence } from '@/components/ui';
@@ -28,7 +28,6 @@ export default function MainLayout({ children, className = '' }: MainLayoutProps
   // Pass landingSequenceComplete to the hook to control its timer
   const { 
     isVisible: isNewsletterVisible, 
-    showModal: showNewsletterModal, // We might not need showNewsletterModal directly here anymore
     hideModal: hideNewsletterModal 
   } = useNewsletterModal({ isReadyToShow: landingSequenceComplete });
 
