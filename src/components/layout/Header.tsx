@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Instagram, Facebook, Youtube } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Menu, X, Instagram, Facebook, Youtube, Search } from 'lucide-react';
 
 /**
  * Header Component - Main navigation and branding for the website
@@ -30,6 +31,70 @@ export default function Header() {
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
   ];
 
+  /**
+   * HeaderSearch Component - Blog search functionality in header
+   */
+  function HeaderSearch() {
+    const router = useRouter();
+    const [searchValue, setSearchValue] = useState('');
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+    const handleSearchSubmit = (e: React.FormEvent) => {
+      e.preventDefault();
+      if (searchValue.trim()) {
+        router.push(`/blog?search=${encodeURIComponent(searchValue.trim())}`);
+        setSearchValue('');
+        setIsSearchOpen(false);
+      }
+    };
+
+    return (
+      <div className="relative">
+        {/* Search Toggle Button */}
+        <button
+          onClick={() => setIsSearchOpen(!isSearchOpen)}
+          className="p-2 text-contrast hover:text-gray-800 transition-colors duration-200"
+          aria-label="Search blogs"
+        >
+          <Search size={20} />
+        </button>
+
+        {/* Search Dropdown */}
+        {isSearchOpen && (
+          <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+            <form onSubmit={handleSearchSubmit} className="p-4">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <input
+                  type="text"
+                  placeholder="Search blog posts..."
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  className="w-full pl-9 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm"
+                  autoFocus
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full mt-3 px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 text-sm font-semibold"
+              >
+                Search Blogs
+              </button>
+            </form>
+          </div>
+        )}
+
+        {/* Overlay to close search when clicking outside */}
+        {isSearchOpen && (
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setIsSearchOpen(false)}
+          />
+        )}
+      </div>
+    );
+  }
+
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
       {/* Top bar with social links - hidden on mobile */}
@@ -39,8 +104,10 @@ export default function Header() {
             {/* Left side - empty for balance */}
             <div></div>
             
-            {/* Right side - Social links */}
+            {/* Right side - Search and Social links */}
             <div className="flex items-center space-x-4">
+              <HeaderSearch />
+              <div className="h-4 w-px bg-gray-300"></div>
               <span className="text-sm text-contrast font-medium">Follow us:</span>
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
@@ -143,6 +210,34 @@ export default function Header() {
               ))}
             </ul>
             
+            {/* Mobile search */}
+            <div className="mt-6 pt-4 border-t border-gray-100">
+              <form onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                const searchValue = formData.get('search') as string;
+                if (searchValue?.trim()) {
+                  window.location.href = `/blog?search=${encodeURIComponent(searchValue.trim())}`;
+                }
+              }}>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="Search blog posts..."
+                    className="w-full pl-9 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full mt-3 px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 text-sm font-semibold"
+                >
+                  Search Blogs
+                </button>
+              </form>
+            </div>
+
             {/* Mobile social links */}
             <div className="mt-6 pt-4 border-t border-gray-100">
               <div className="flex justify-center space-x-6">
