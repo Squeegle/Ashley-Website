@@ -118,36 +118,35 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:block pb-4">
-          <div className="flex justify-center items-center space-x-8 lg:space-x-12">
-            <ul className="flex space-x-8 lg:space-x-12">
-              {navigationItems.map((item) => (
-                <li key={item.name}>
-                  {item.external ? (
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-            
-            {/* Search Field */}
-            <div className="ml-8 lg:ml-12">
-              <HeaderSearch />
-            </div>
+        <nav className="hidden md:block pb-4 relative">
+          {/* Centered Navigation Items */}
+          <ul className="flex justify-center space-x-8 lg:space-x-12">
+            {navigationItems.map((item) => (
+              <li key={item.name}>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+          
+          {/* Search Field - Positioned to the right */}
+          <div className="absolute right-0 top-0 flex items-center">
+            <HeaderSearch />
           </div>
         </nav>
       </div>
