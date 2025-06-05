@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Menu, X, Instagram, Facebook, Youtube } from 'lucide-react';
 
 /**
  * Header Component - Main navigation and branding for the website
@@ -20,13 +20,14 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Shop', href: 'https://your-merch-site.com', external: true },
   ];
 
   // Social media links
   const socialLinks = [
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
     { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
+    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
   ];
 
   return (
@@ -89,12 +90,23 @@ export default function Header() {
           <ul className="flex justify-center space-x-8 lg:space-x-12">
             {navigationItems.map((item) => (
               <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
-                >
-                  {item.name}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
+                  >
+                    {item.name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -108,13 +120,25 @@ export default function Header() {
             <ul className="space-y-4">
               {navigationItems.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="block text-contrast hover:text-gray-800 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-contrast hover:text-gray-800 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block text-contrast hover:text-gray-800 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

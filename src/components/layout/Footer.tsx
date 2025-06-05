@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Instagram, Facebook, Twitter, Mail, Heart } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Mail, Heart } from 'lucide-react';
 
 /**
  * Footer Component - Site footer with links, social media, and newsletter signup
@@ -21,6 +21,7 @@ export default function Footer() {
         { name: 'Home', href: '/' },
         { name: 'About', href: '/about' },
         { name: 'Blog', href: '/blog' },
+        { name: 'Shop', href: 'https://your-merch-site.com', external: true },
       ],
     },
 
@@ -39,7 +40,7 @@ export default function Footer() {
   const socialLinks = [
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
     { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
+    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
     { name: 'Email', icon: Mail, href: 'mailto:hello@ashleyrose.com', color: 'hover:text-gray-600' },
   ];
 
@@ -138,12 +139,23 @@ export default function Footer() {
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-contrast hover:text-gray-700 transition-colors duration-200 font-medium block py-1"
-                    >
-                      {link.name}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-contrast hover:text-gray-700 transition-colors duration-200 font-medium block py-1"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-contrast hover:text-gray-700 transition-colors duration-200 font-medium block py-1"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
