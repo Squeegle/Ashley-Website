@@ -39,7 +39,6 @@ export default async function Home() {
                 key={blog.id}
                 blog={blog}
                 isReversed={index % 2 === 1}
-                index={index}
               />
             ))}
           </div>
@@ -141,10 +140,9 @@ export default async function Home() {
 interface AlternatingBlogCardProps {
   blog: BlogPost;
   isReversed: boolean;
-  index: number;
 }
 
-function AlternatingBlogCard({ blog, isReversed, index }: AlternatingBlogCardProps) {
+function AlternatingBlogCard({ blog, isReversed }: AlternatingBlogCardProps) {
   // Format the published date to a readable format
   const formattedDate = blog.publishedAt.toLocaleDateString('en-US', { 
     year: 'numeric', 
