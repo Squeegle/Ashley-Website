@@ -75,20 +75,13 @@ export default async function Home() {
                 alongside beauty.
               </p>
             </div>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8">
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white dark-button-text rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
               >
                 Learn More About Me
                 <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-md hover:border-gray-800 hover:bg-gray-900 hover:text-white transition-colors duration-200 font-semibold"
-              >
-                <Instagram className="w-4 h-4" />
-                Follow My Journey
               </Link>
             </div>
           </div>
