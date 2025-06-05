@@ -32,66 +32,33 @@ export default function Header() {
   ];
 
   /**
-   * HeaderSearch Component - Blog search functionality in header
+   * HeaderSearch Component - Search functionality in header
    */
   function HeaderSearch() {
     const router = useRouter();
     const [searchValue, setSearchValue] = useState('');
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     const handleSearchSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       if (searchValue.trim()) {
         router.push(`/blog?search=${encodeURIComponent(searchValue.trim())}`);
         setSearchValue('');
-        setIsSearchOpen(false);
       }
     };
 
     return (
-      <div className="relative">
-        {/* Search Toggle Button */}
-        <button
-          onClick={() => setIsSearchOpen(!isSearchOpen)}
-          className="p-2 text-contrast hover:text-gray-800 transition-colors duration-200"
-          aria-label="Search blogs"
-        >
-          <Search size={20} />
-        </button>
-
-        {/* Search Dropdown */}
-        {isSearchOpen && (
-          <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-            <form onSubmit={handleSearchSubmit} className="p-4">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                <input
-                  type="text"
-                  placeholder="Search blog posts..."
-                  value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm"
-                  autoFocus
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full mt-3 px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 text-sm font-semibold"
-              >
-                Search Blogs
-              </button>
-            </form>
-          </div>
-        )}
-
-        {/* Overlay to close search when clicking outside */}
-        {isSearchOpen && (
-          <div
-            className="fixed inset-0 z-40"
-            onClick={() => setIsSearchOpen(false)}
+      <form onSubmit={handleSearchSubmit} className="relative">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            className="w-48 lg:w-56 pl-9 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm"
           />
-        )}
-      </div>
+        </div>
+      </form>
     );
   }
 
@@ -104,10 +71,8 @@ export default function Header() {
             {/* Left side - empty for balance */}
             <div></div>
             
-            {/* Right side - Search and Social links */}
+            {/* Right side - Social links */}
             <div className="flex items-center space-x-4">
-              <HeaderSearch />
-              <div className="h-4 w-px bg-gray-300"></div>
               <span className="text-sm text-contrast font-medium">Follow us:</span>
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
@@ -154,29 +119,36 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block pb-4">
-          <ul className="flex justify-center space-x-8 lg:space-x-12">
-            {navigationItems.map((item) => (
-              <li key={item.name}>
-                {item.external ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
+          <div className="flex justify-center items-center space-x-8 lg:space-x-12">
+            <ul className="flex space-x-8 lg:space-x-12">
+              {navigationItems.map((item) => (
+                <li key={item.name}>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+            
+            {/* Search Field */}
+            <div className="ml-8 lg:ml-12">
+              <HeaderSearch />
+            </div>
+          </div>
         </nav>
       </div>
 
@@ -225,7 +197,7 @@ export default function Header() {
                   <input
                     type="text"
                     name="search"
-                    placeholder="Search blog posts..."
+                    placeholder="Search..."
                     className="w-full pl-9 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-gray-900 placeholder-gray-500 text-sm"
                   />
                 </div>
@@ -233,7 +205,7 @@ export default function Header() {
                   type="submit"
                   className="w-full mt-3 px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 text-sm font-semibold"
                 >
-                  Search Blogs
+                  Search
                 </button>
               </form>
             </div>
