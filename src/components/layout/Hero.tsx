@@ -180,18 +180,12 @@ export function HomeHero() {
           <p className="text-base md:text-lg text-gray-800 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-semibold">
             Transform your home into a reflection of your personality with thoughtful design, curated aesthetics, and functional beauty.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/blog"
               className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white dark-button-text font-semibold rounded-md hover:bg-gray-800 transition-colors duration-200 shadow-lg"
             >
               Explore Content
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold rounded-md transition-colors duration-200"
-            >
-              Let&apos;s collaborate
             </Link>
           </div>
         </div>

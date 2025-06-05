@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Instagram, Facebook, Twitter, Mail, Heart, Phone, MapPin, Clock } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Mail, Heart } from 'lucide-react';
 
 /**
  * Footer Component - Site footer with links, social media, and newsletter signup
@@ -23,12 +23,7 @@ export default function Footer() {
         { name: 'Blog', href: '/blog' },
       ],
     },
-    {
-      title: 'Services',
-      links: [
-        { name: 'Design Consultation', href: '/contact' },
-      ],
-    },
+
     {
       title: 'Resources',
       links: [
@@ -38,13 +33,7 @@ export default function Footer() {
     },
   ];
 
-  // Contact information for better footer content distribution
-  const contactInfo = [
-    { icon: Mail, text: 'hello@ashleyrose.com', href: 'mailto:hello@ashleyrose.com' },
-    { icon: Phone, text: '(555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, text: 'Los Angeles, CA', href: '#' },
-    { icon: Clock, text: 'Mon-Fri 9AM-5PM', href: '#' },
-  ];
+
 
   // Social media links
   const socialLinks = [
@@ -161,35 +150,7 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Contact Information - Takes up 1 column */}
-          <div className="lg:col-span-1">
-            <h3 className="text-sm font-bold text-contrast uppercase tracking-wide mb-4">
-              Get in Touch
-            </h3>
-            <ul className="space-y-3">
-              {contactInfo.map((contact) => {
-                const IconComponent = contact.icon;
-                const content = (
-                  <div className="flex items-center text-sm text-contrast font-medium py-1">
-                    <IconComponent size={16} className="mr-3 text-gray-600" />
-                    <span>{contact.text}</span>
-                  </div>
-                );
-                
-                return (
-                  <li key={contact.text}>
-                    {contact.href !== '#' ? (
-                      <Link href={contact.href} className="hover:text-gray-700 transition-colors duration-200">
-                        {content}
-                      </Link>
-                    ) : (
-                      content
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+
         </div>
       </div>
 

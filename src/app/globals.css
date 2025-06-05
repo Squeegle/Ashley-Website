@@ -362,7 +362,7 @@ input::placeholder, textarea::placeholder {
 .text-gray-800 { color: #1f2937 !important; font-weight: 600 !important; }
 .text-gray-900 { color: #111827 !important; font-weight: 700 !important; }
 
-/* Ensure contact form sections are clearly visible */
+/* General section styling */
 section, .bg-gray-50 {
   background-color: #f9fafb !important;
 }
@@ -372,7 +372,7 @@ section, .bg-gray-50 {
   color: #111827 !important;
 }
 
-/* Force all text to be visible in contact forms */
+/* Force all text to be visible in forms */
 form * {
   color: #111827 !important;
   opacity: 1 !important;
