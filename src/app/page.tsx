@@ -100,49 +100,7 @@ export default async function Home() {
         </div>
       </Section>
 
-      {/* Featured Work Section */}
-      <Section spacing="large" background="gray">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
-            Recent Projects
-          </h2>
-          <p className="text-body-large max-w-3xl mx-auto text-contrast font-medium">
-            Take a peek inside some of our favorite recent transformations, 
-            where functionality meets beauty in every detail.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <ProjectCard
-            image="/images/project-1.jpg"
-            title="Modern Coastal Living Room"
-            description="A serene space combining natural textures with contemporary comfort."
-            link="/projects/2024-01-20-modern-coastal-living-room"
-          />
-          <ProjectCard
-            image="/images/project-2.jpg"
-            title="Scandinavian Kitchen Remodel"
-            description="Clean lines and warm woods create the perfect family gathering space."
-            link="/projects/2024-01-15-scandinavian-kitchen-refresh"
-          />
-          <ProjectCard
-            image="/images/project-3.jpg"
-            title="Bohemian Master Bedroom"
-            description="A dreamy retreat featuring rich textures and curated vintage finds."
-            link="/projects/2024-01-10-bohemian-bedroom-makeover"
-          />
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
-          >
-            View All Projects
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </Section>
 
       {/* Instagram Section */}
       <Section spacing="medium">
@@ -173,42 +131,7 @@ export default async function Home() {
   );
 }
 
-/**
- * Project Card Component
- */
-interface ProjectCardProps {
-  image: string;
-  title: string;
-  description: string;
-  link: string;
-}
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function ProjectCard({ image, title, description, link }: ProjectCardProps) {
-  return (
-    <Link href={link} className="group">
-      <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
-        <div className="relative h-64 overflow-hidden">
-          <div className="w-full h-full bg-gray-200"></div>
-          {/* Placeholder for actual image */}
-          {/* <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          /> */}
-        </div>
-        <div className="p-6">
-          <h3 className="text-lg font-serif text-contrast mb-2 group-hover:text-gray-800 transition-colors duration-200 font-medium">
-            {title}
-          </h3>
-          <p className="text-contrast text-sm leading-relaxed font-medium">{description}</p>
-        </div>
-      </div>
-    </Link>
-  );
-}
 
 /**
  * Blog Card Component

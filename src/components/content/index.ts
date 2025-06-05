@@ -8,4 +8,4 @@ export { default as ShareButtons } from './ShareButtons';
 export { default as AuthorBio } from './AuthorBio';
 
 // Project-related content components
-export { default as ProjectFilters } from './ProjectFilters'; 
+// ProjectFilters removed 

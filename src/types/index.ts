@@ -13,33 +13,7 @@ export interface BlogPost {
   readTime: number
 }
 
-export interface Project {
-  id: string
-  title: string
-  excerpt: string
-  content: string
-  featuredImage: string
-  beforeImage?: string
-  afterImage?: string
-  publishedAt: Date
-  slug: string
-  category: string
-  tags: string[]
-  author: string
-  readTime: number
-  // Project-specific metadata
-  timeline?: string // e.g., "2 weeks", "1 weekend"
-  budget?: {
-    min?: number
-    max?: number
-    currency: string
-  }
-  difficulty?: 'Beginner' | 'Intermediate' | 'Advanced'
-  materials?: string[]
-  roomType?: string // e.g., "Living Room", "Kitchen", "Bedroom"
-  projectType?: 'DIY' | 'Decor' | 'Renovation' | 'Organization' | 'Other'
-  isBeforeAfter?: boolean
-}
+// Project interface removed
 
 export interface InstagramPost {
   id: string
