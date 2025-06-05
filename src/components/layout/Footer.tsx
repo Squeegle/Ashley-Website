@@ -26,7 +26,6 @@ export default function Footer() {
     {
       title: 'Services',
       links: [
-        { name: 'Collaborations', href: '/contact' },
         { name: 'Design Consultation', href: '/contact' },
       ],
     },
