@@ -424,5 +424,49 @@ a.bg-gray-800,
 }
 
 .bg-gray-900:hover *, .bg-gray-800:hover * {
-  color: #ffffff !important;
+  color: white !important;
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Enhanced grid auto-sizing for staggered layouts */
+.grid-rows-masonry {
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Improved transitions for staggered cards */
+.staggered-card-transition {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.staggered-card-transition:hover {
+  transform: translateY(-4px);
+}
+
+/* Responsive grid utilities for better staggered positioning */
+@media (min-width: 768px) {
+  .grid-staggered {
+    display: grid;
+    grid-auto-flow: row dense;
+  }
 }

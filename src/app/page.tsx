@@ -68,7 +68,7 @@ export default async function Home() {
         </div>
       </Section>
 
-      {/* Recent Blogs Section */}
+      {/* Recent Blogs Section - Staggered Layout */}
       <Section spacing="large">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
@@ -80,13 +80,17 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {recentBlogs.map((blog) => (
-            <BlogCard
-              key={blog.id}
-              blog={blog}
-            />
-          ))}
+        {/* Staggered Grid Layout for 3 Recent Blogs */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+            {recentBlogs.map((blog, index) => (
+              <StaggeredBlogCard
+                key={blog.id}
+                blog={blog}
+                variant={index === 0 ? 'large' : index === 1 ? 'tall' : 'medium'}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">
@@ -99,8 +103,6 @@ export default async function Home() {
           </Link>
         </div>
       </Section>
-
-
 
       {/* Instagram Section */}
       <Section spacing="medium">
@@ -131,16 +133,16 @@ export default async function Home() {
   );
 }
 
-
-
 /**
- * Blog Card Component
+ * Staggered Blog Card Component - Creates visually interesting layouts
+ * Supports different variants: large, tall, medium for staggered positioning
  */
-interface BlogCardProps {
+interface StaggeredBlogCardProps {
   blog: BlogPost;
+  variant: 'large' | 'tall' | 'medium';
 }
 
-function BlogCard({ blog }: BlogCardProps) {
+function StaggeredBlogCard({ blog, variant }: StaggeredBlogCardProps) {
   // Format the published date to a readable format
   const formattedDate = blog.publishedAt.toLocaleDateString('en-US', { 
     year: 'numeric', 
@@ -148,11 +150,61 @@ function BlogCard({ blog }: BlogCardProps) {
     day: 'numeric' 
   });
 
+  // Define grid positioning and sizing based on variant
+  const getVariantClasses = () => {
+    switch (variant) {
+      case 'large':
+        // Main featured card - spans 3 columns on md, 4 on lg, full height
+        return 'md:col-span-3 lg:col-span-4 md:row-span-2';
+      case 'tall':
+        // Tall card - spans 1 column, 2 rows
+        return 'md:col-span-1 lg:col-span-1 md:row-span-2';
+      case 'medium':
+        // Medium card - spans 1 column, 1 row (positioned to fill remaining space)
+        return 'md:col-span-1 lg:col-span-1 md:row-span-1';
+      default:
+        return 'md:col-span-1';
+    }
+  };
+
+  // Define image height based on variant
+  const getImageHeight = () => {
+    switch (variant) {
+      case 'large':
+        return 'h-64 md:h-80 lg:h-96';
+      case 'tall':
+        return 'h-48 md:h-64';
+      case 'medium':
+        return 'h-32 md:h-40';
+      default:
+        return 'h-48';
+    }
+  };
+
+  // Define text size based on variant
+  const getTitleSize = () => {
+    switch (variant) {
+      case 'large':
+        return 'text-xl md:text-2xl lg:text-3xl';
+      case 'tall':
+        return 'text-lg md:text-xl';
+      case 'medium':
+        return 'text-base md:text-lg';
+      default:
+        return 'text-lg';
+    }
+  };
+
   return (
-    <Link href={`/blog/${blog.slug}`} className="group">
-      <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200">
-        <div className="relative h-64 overflow-hidden">
-          <div className="w-full h-full bg-gray-200"></div>
+    <Link href={`/blog/${blog.slug}`} className={`group ${getVariantClasses()}`}>
+      <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+        <div className={`relative overflow-hidden ${getImageHeight()}`}>
+          <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+            <div className="text-center text-gray-500">
+              <div className="text-2xl mb-2">📷</div>
+              <p className="text-xs font-medium">Featured Image</p>
+            </div>
+          </div>
           {/* Placeholder for actual image */}
           {/* <Image
             src={blog.featuredImage}
@@ -161,10 +213,16 @@ function BlogCard({ blog }: BlogCardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           /> */}
+          
+          {/* Overlay for large variant to add visual interest */}
+          {variant === 'large' && (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          )}
         </div>
-        <div className="p-6">
+        
+        <div className={`p-4 md:p-6 flex-1 flex flex-col ${variant === 'large' ? 'md:p-8' : ''}`}>
           {/* Blog metadata */}
-          <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
+          <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
             <div className="flex items-center gap-1">
               <Calendar className="w-3 h-3" />
               <span>{formattedDate}</span>
@@ -174,14 +232,22 @@ function BlogCard({ blog }: BlogCardProps) {
               <span>{blog.readTime} min read</span>
             </div>
           </div>
-          <h3 className="text-lg font-serif text-contrast mb-2 group-hover:text-gray-800 transition-colors duration-200 font-medium">
+          
+          <h3 className={`font-serif text-contrast mb-3 group-hover:text-gray-800 transition-colors duration-200 font-medium line-clamp-2 flex-1 ${getTitleSize()}`}>
             {blog.title}
           </h3>
-          <p className="text-contrast text-sm leading-relaxed font-medium mb-4">{blog.excerpt}</p>
-          {/* Tags display */}
+          
+          {/* Show excerpt only for large and tall variants */}
+          {(variant === 'large' || variant === 'tall') && (
+            <p className="text-contrast text-sm leading-relaxed font-medium mb-4 line-clamp-3">
+              {blog.excerpt}
+            </p>
+          )}
+          
+          {/* Tags display - show more tags for large variant */}
           {blog.tags && blog.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1 mb-4">
-              {blog.tags.slice(0, 2).map((tag) => (
+            <div className="flex flex-wrap gap-1 mt-auto">
+              {blog.tags.slice(0, variant === 'large' ? 3 : 2).map((tag) => (
                 <span
                   key={tag}
                   className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
@@ -189,9 +255,9 @@ function BlogCard({ blog }: BlogCardProps) {
                   {tag}
                 </span>
               ))}
-              {blog.tags.length > 2 && (
+              {blog.tags.length > (variant === 'large' ? 3 : 2) && (
                 <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                  +{blog.tags.length - 2}
+                  +{blog.tags.length - (variant === 'large' ? 3 : 2)}
                 </span>
               )}
             </div>
