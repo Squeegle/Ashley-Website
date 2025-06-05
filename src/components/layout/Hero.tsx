@@ -171,23 +171,12 @@ export function HomeHero() {
       {/* Content */}
       <div className="relative text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <p className="text-sm md:text-base font-bold uppercase tracking-wide text-gray-900 mb-2 md:mb-4">
-            Interior Design & Lifestyle
-          </p>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 mb-4 md:mb-6 leading-tight font-bold">
             Creating Spaces That Tell Your Story
           </h1>
           <p className="text-base md:text-lg text-gray-800 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-semibold">
             Transform your home into a reflection of your personality with thoughtful design, curated aesthetics, and functional beauty.
           </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white dark-button-text font-semibold rounded-md hover:bg-gray-800 transition-colors duration-200 shadow-lg"
-            >
-              Explore Content
-            </Link>
-          </div>
         </div>
       </div>
     </div>
