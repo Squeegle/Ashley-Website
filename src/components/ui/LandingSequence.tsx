@@ -8,9 +8,9 @@ interface LandingSequenceProps {
 }
 
 // Define the duration for each page and fades
-const NAME_PAGE_VISIBLE_DURATION = 2000; // 2 seconds for name page to be visible
-const ICON_PAGE_VISIBLE_DURATION = 1500; // 1.5 seconds for icon page to be visible
-const FADE_DURATION = 500; // 0.5 seconds for fade in/out
+const NAME_PAGE_VISIBLE_DURATION = 800; // Reduced from 2000ms to 800ms (60% faster)
+const ICON_PAGE_VISIBLE_DURATION = 600; // Reduced from 1500ms to 600ms (60% faster)
+const FADE_DURATION = 300; // Reduced from 500ms to 300ms (40% faster)
 
 export default function LandingSequence({ onComplete }: LandingSequenceProps) {
   // Steps:
