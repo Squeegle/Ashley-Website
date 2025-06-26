@@ -11,7 +11,7 @@ export const siteConfig: SiteConfig = {
   ogImage: "https://ashleyrose.com/og.jpg", // Update with actual image
   links: {
     instagram: "https://www.instagram.com/ashleyrosep?igsh=eDhtaWRlcTY2MXpz", // Update with actual handle
-    youtube: "https://youtube.com/@ashleyrose", // Update with actual channel
+    youtube: "https://youtube.com/@ashleyrose6?si=z_DMlLzZB_-jEhQK", // YouTube channel
     spotify: "https://open.spotify.com/show/ashleyrose", // Update with actual podcast
     pinterest: "https://pinterest.com/ashleyrose", // Update with actual profile
     facebook: "https://www.facebook.com/share/1Cpr5LSvy6/", // Facebook profile

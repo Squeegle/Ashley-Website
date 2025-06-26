@@ -28,7 +28,7 @@ export default function Header() {
   const socialLinks = [
     { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/ashleyrosep?igsh=eDhtaWRlcTY2MXpz', color: 'hover:text-pink-600' },
     { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/share/1Cpr5LSvy6/', color: 'hover:text-blue-600' },
-    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ashleyrose6?si=z_DMlLzZB_-jEhQK', color: 'hover:text-red-600' },
   ];
 
   /**
