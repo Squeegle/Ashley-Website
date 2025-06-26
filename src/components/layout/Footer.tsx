@@ -105,10 +105,7 @@ export default function Footer() {
             <div className="mb-6">
               <h2 className="text-2xl font-serif text-contrast mb-3 font-medium">At home with Rose</h2>
               <p className="text-contrast leading-relaxed font-medium mb-4">
-                Creating beautiful, functional spaces that tell your story. Interior design and lifestyle inspiration for the modern home.
-              </p>
-              <p className="text-sm text-contrast leading-relaxed font-medium">
-                Transforming houses into homes, one room at a time. Join me on this journey of creating spaces that inspire and delight.
+                Sharing real-life home projects, everyday chaos, and the beauty in the in-between. I&apos;m Ashley—a mom of four making spaces feel like home, one imperfect project at a time.
               </p>
             </div>
             

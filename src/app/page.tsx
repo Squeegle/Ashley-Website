@@ -64,15 +64,10 @@ export default async function Home() {
             </h2>
             <div className="space-y-4 text-body-large leading-relaxed">
               <p className="text-contrast font-medium">
-                I believe that your home should tell your story—every room should reflect 
-                who you are and how you live. With over 8 years of experience in interior 
-                design, I specialize in creating spaces that are both beautiful and deeply personal.
+                Hi, I&apos;m Ashley Rose—a content creator, home decor enthusiast, and mom of four based in Canada. I share real-life moments from our ever-evolving home, mixing DIY projects, second-hand finds, and everyday chaos into something that feels both beautiful and lived in. What started as documenting our home renovation journey has grown into a space where I get to connect with others who love making their homes feel like theirs, even if it&apos;s a little messy along the way.
               </p>
               <p className="text-contrast font-medium">
-                My approach combines timeless design principles with fresh, contemporary touches, 
-                ensuring your space feels collected rather than decorated. I love mixing high and 
-                low pieces, vintage finds with modern furniture, and always prioritize function 
-                alongside beauty.
+                I believe in progress over perfection, that personality matters more than polish, and that the stories behind the spaces are what truly make them special. Whether it&apos;s a room refresh, a late-night brainstorm, or one of those &quot;I didn&apos;t plan to do this today&quot; kind of projects—I&apos;m here for all of it. Welcome to my corner of the internet.
               </p>
             </div>
             <div className="mt-8">
