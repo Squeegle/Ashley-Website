@@ -70,7 +70,6 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
     fontSize: '4rem',
     fontFamily: 'var(--font-serif)',
     fontWeight: 'bold',
-    color: '#454140', // Primary color
     textAlign: 'center',
   };
 
@@ -100,7 +99,7 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
                 transition: `opacity ${FADE_DURATION}ms ease-in-out`,
               }}
             >
-              <div style={textStyle}>At home with Rose</div>
+              <div className="text-primary" style={textStyle}>At home with Rose</div>
             </div>
           )}
         </div>
