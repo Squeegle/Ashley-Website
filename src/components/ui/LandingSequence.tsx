@@ -61,13 +61,14 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ffffff', // Match icon's background color
+    backgroundColor: '#ffffff', // White background
     zIndex: 100,
     transition: `opacity ${FADE_DURATION}ms ease-in-out`,
   };
 
   const textStyle: React.CSSProperties = {
-    fontSize: '3rem',
+    fontSize: '4rem',
+    fontFamily: 'var(--font-serif)',
     fontWeight: 'bold',
     color: '#454140', // Primary color
     textAlign: 'center',
@@ -75,8 +76,8 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
 
   const iconContainerStyle: React.CSSProperties = {
     position: 'relative',
-    width: '192px',
-    height: '192px',
+    width: '384px',
+    height: '384px',
   };
   
   if (step === 5) return null; // Sequence finished, render nothing
@@ -116,12 +117,17 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
           >
             <div style={iconContainerStyle}>
               <Image
-                src="/icons/android-chrome-192x192.png"
+                src="/icons/android-chrome-512x512.png"
                 alt="At home with Rose"
-                fill
+                width={384}
+                height={384}
                 priority
-                sizes="192px"
-                style={{ objectFit: 'contain' }}
+                style={{ 
+                  objectFit: 'contain',
+                  imageRendering: 'crisp-edges',
+                  WebkitFontSmoothing: 'antialiased',
+                }}
+                className="transform-gpu"
               />
             </div>
         </div>

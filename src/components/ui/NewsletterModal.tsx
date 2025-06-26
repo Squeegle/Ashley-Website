@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { X, Mail, Sparkles } from 'lucide-react';
+import { X, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 /**
  * Newsletter Modal Component
@@ -108,8 +109,14 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
         <div className="p-8 pt-12">
           {/* Icon and title */}
           <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-full mb-4">
-              <Sparkles className="w-8 h-8 text-purple-600" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-50 rounded-full mb-4">
+              <Image
+                src="/icons/android-chrome-192x192.png"
+                alt="Rose Icon"
+                width={32}
+                height={32}
+                priority
+              />
             </div>
             <h2 id="modal-title" className="text-2xl md:text-3xl font-serif text-gray-900 mb-3">
               Stay Inspired
