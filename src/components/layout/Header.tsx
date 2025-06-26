@@ -63,9 +63,9 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-secondary shadow-sm border-b border-secondary sticky top-0 z-50">
       {/* Top bar with social links - hidden on mobile */}
-      <div className="hidden md:block bg-primary border-b border-gray-100 [&_*]:!text-white">
+      <div className="hidden md:block bg-primary border-b border-primary [&_*]:!text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-2">
             {/* Left side - empty for balance */}
@@ -128,14 +128,14 @@ export default function Header() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-secondary text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-secondary hover:text-secondary font-bold"
+                    className="!text-white text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-white hover:!text-white font-bold"
                   >
                     {item.name}
                   </a>
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-secondary text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-secondary hover:text-secondary font-bold"
+                    className="!text-white text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-white hover:!text-white font-bold"
                   >
                     {item.name}
                   </Link>
@@ -153,7 +153,7 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
+        <div className="md:hidden bg-secondary border-t border-gray-100">
           <nav className="px-4 py-4">
             <ul className="space-y-4">
               {navigationItems.map((item) => (
@@ -163,7 +163,7 @@ export default function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-secondary hover:text-secondary font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
+                      className="block !text-white hover:!text-white/80 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
@@ -171,7 +171,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block text-secondary hover:text-secondary font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
+                      className="block !text-white hover:!text-white/80 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
@@ -218,7 +218,7 @@ export default function Header() {
                     <Link
                       key={social.name}
                       href={social.href}
-                      className={`text-secondary ${social.color} transition-colors duration-200`}
+                      className={`text-white ${social.color} transition-colors duration-200`}
                       aria-label={social.name}
                     >
                       <IconComponent size={20} />

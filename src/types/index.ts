@@ -19,10 +19,9 @@ export interface InstagramPost {
   id: string
   caption: string
   mediaUrl: string
-  mediaType: 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM'
   permalink: string
   timestamp: string
-  thumbnailUrl?: string
+  mediaType: string
 }
 
 export interface YouTubeVideo {

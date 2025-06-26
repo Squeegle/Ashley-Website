@@ -1,24 +1,22 @@
-import { HomeHero } from "@/components/layout";
 import { Section } from "@/components/layout";
 import Link from "next/link";
 import { ArrowRight, Instagram, Calendar, Clock } from "lucide-react";
 import { getAllBlogPosts } from "@/lib/blog";
 import { BlogPost } from "@/types";
+import { getLatestInstagramPosts } from '@/lib/services/instagram';
+import InstagramGrid from '@/components/content/InstagramGrid';
 
 /**
  * Homepage - Ashley Rose Interior Design & Lifestyle
- * Features the main hero section, about section, recent blogs, recent work,
- * and Instagram section in the style of chrislovesjulia.com
+ * Features recent blogs, about section, and Instagram section
  */
 export default async function Home() {
   // Fetch recent blog posts for the homepage
   const { posts: recentBlogs } = await getAllBlogPosts({ limit: 3 });
+  const instagramPosts = await getLatestInstagramPosts(6);
 
   return (
     <div>
-      {/* Hero Section - Large image with overlaid text */}
-      <HomeHero />
-
       {/* Recent Blogs Section - Vertical Alternating Layout */}
       <Section spacing="large" background="white">
         <div className="text-center mb-12 md:mb-16">
@@ -98,30 +96,18 @@ export default async function Home() {
         </div>
       </Section>
 
-      {/* Instagram Section */}
-      <Section spacing="medium" background="white">
+      {/* Instagram Feed Section */}
+      <Section spacing="large" background="white">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
-            Follow Along
+          <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
+            Follow Along on Instagram
           </h2>
-          <p className="text-body-large mb-8 text-primary font-medium">
-            Get daily design inspiration and behind-the-scenes glimpses on Instagram
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Join me on Instagram for daily inspiration, behind-the-scenes moments, and more home decor ideas
           </p>
-          <Link
-            href="https://www.instagram.com/ashleyrosep?igsh=eDhtaWRlcTY2MXpz"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-md hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-semibold"
-          >
-            <Instagram className="w-5 h-5" />
-            @ashleyrosep
-          </Link>
         </div>
 
-        {/* Instagram Grid Placeholder */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="aspect-square bg-gray-200 rounded-lg"></div>
-          ))}
-        </div>
+        <InstagramGrid posts={instagramPosts} />
       </Section>
     </div>
   );
