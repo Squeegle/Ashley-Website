@@ -50,21 +50,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
   return (
     <div>
-      {/* Page Header */}
-      <Section spacing="large" background="gray">
-        <Container size="large">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-contrast mb-6">
-              Blog
-            </h1>
-            <p className="text-xl md:text-2xl text-contrast font-medium leading-relaxed">
-              DIY tutorials, decor tips, and lifestyle inspiration to help you create 
-              a home that tells your story
-            </p>
-          </div>
-        </Container>
-      </Section>
-
       {/* Blog Filters */}
       <Section spacing="medium">
         <Container size="large">

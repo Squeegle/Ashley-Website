@@ -1,10 +1,9 @@
-import { PageBanner, Container, Section } from '@/components/layout';
+import { Container, Section } from '@/components/layout';
 import { Award, Users, Heart, Palette, Home, Building, Coffee } from 'lucide-react';
 
 /**
  * About Page Component
  * Features:
- * - Hero banner with page title
  * - Personal bio section
  * - Timeline of professional experience
  * - Skills and services showcase
@@ -69,24 +68,16 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Page Banner */}
-      <PageBanner 
-        title="About Ashley" 
-        description="Creating beautiful, functional spaces that tell your story"
-        imageSrc="/images/about-hero.jpg"
-        imageAlt="Ashley Rose in a beautifully designed interior space"
-      />
-
       {/* Bio Section */}
       <Section className="py-16 lg:py-24">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content */}
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-serif text-black mb-6 font-bold">
+              <h2 className="text-3xl lg:text-4xl font-serif text-primary mb-6 font-bold">
                 Hello, I&apos;m Ashley Rose
               </h2>
-              <div className="space-y-4 text-gray-800 leading-relaxed font-semibold">
+              <div className="space-y-4 text-primary font-sans leading-relaxed">
                 <p>
                   With over a decade of experience in interior design, I believe that every space has the potential to be extraordinary. My passion lies in creating environments that are not only beautiful but also deeply personal and functional for the people who live and work in them.
                 </p>
@@ -118,10 +109,10 @@ export default function AboutPage() {
       <Section className="py-16 lg:py-24 bg-gray-50">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-serif text-black mb-6 font-bold">
+            <h2 className="text-3xl lg:text-4xl font-serif text-primary mb-6 font-bold">
               My Journey
             </h2>
-            <p className="text-gray-800 max-w-2xl mx-auto leading-relaxed font-semibold">
+            <p className="text-primary font-sans max-w-2xl mx-auto leading-relaxed">
               From my first design assistant role to founding my own studio, here&apos;s how my passion for interior design has evolved over the years.
             </p>
           </div>
@@ -210,10 +201,10 @@ export default function AboutPage() {
       <Section className="py-16 lg:py-24">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-serif text-black mb-6 font-bold">
+            <h2 className="text-3xl lg:text-4xl font-serif text-primary mb-6 font-bold">
               Skills & Services
             </h2>
-            <p className="text-gray-800 max-w-2xl mx-auto leading-relaxed font-semibold">
+            <p className="text-primary font-sans max-w-2xl mx-auto leading-relaxed">
               I offer a comprehensive range of design services to transform your space into something truly special.
             </p>
           </div>
@@ -227,8 +218,8 @@ export default function AboutPage() {
                   <div className={`w-16 h-16 ${skill.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent size={28} />
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-4">{skill.title}</h3>
-                  <p className="text-gray-800 leading-relaxed font-semibold">{skill.description}</p>
+                  <h3 className="text-xl font-bold text-primary mb-4">{skill.title}</h3>
+                  <p className="text-primary font-sans leading-relaxed">{skill.description}</p>
                 </div>
               );
             })}
@@ -240,24 +231,24 @@ export default function AboutPage() {
       <Section className="py-16 lg:py-24 bg-gray-50">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-serif text-black mb-8 font-bold">
+            <h2 className="text-3xl lg:text-4xl font-serif text-primary mb-8 font-bold">
               My Design Philosophy
             </h2>
-            <blockquote className="text-xl lg:text-2xl text-black leading-relaxed mb-8 font-semibold italic">
+            <blockquote className="text-xl lg:text-2xl text-primary font-sans leading-relaxed mb-8 italic">
               &ldquo;Great design is not just about making things beautiful – it&apos;s about creating spaces that enhance the way people live, work, and feel.&rdquo;
             </blockquote>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
-                <h4 className="text-lg font-bold text-black mb-2">Functionality First</h4>
-                <p className="text-gray-800 font-semibold">Every design decision prioritizes how you actually use your space.</p>
+                <h4 className="text-lg font-bold text-primary mb-2">Functionality First</h4>
+                <p className="text-primary font-sans">Every design decision prioritizes how you actually use your space.</p>
               </div>
               <div className="text-center">
-                <h4 className="text-lg font-bold text-black mb-2">Personal Expression</h4>
-                <p className="text-gray-800 font-semibold">Your personality and lifestyle should shine through in every detail.</p>
+                <h4 className="text-lg font-bold text-primary mb-2">Personal Expression</h4>
+                <p className="text-primary font-sans">Your personality and lifestyle should shine through in every detail.</p>
               </div>
               <div className="text-center">
-                <h4 className="text-lg font-bold text-black mb-2">Timeless Beauty</h4>
-                <p className="text-gray-800 font-semibold">Creating designs that will feel fresh and relevant for years to come.</p>
+                <h4 className="text-lg font-bold text-primary mb-2">Timeless Beauty</h4>
+                <p className="text-primary font-sans">Creating designs that will feel fresh and relevant for years to come.</p>
               </div>
             </div>
           </div>

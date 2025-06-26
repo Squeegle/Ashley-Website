@@ -13,13 +13,13 @@ export default function BlogContent({ content, className = '' }: BlogContentProp
   const processContent = (markdown: string) => {
     return markdown
       // Convert headers
-      .replace(/^### (.*$)/gm, '<h3 class="text-xl font-serif text-gray-900 mb-4 mt-6">$1</h3>')
-      .replace(/^## (.*$)/gm, '<h2 class="text-2xl md:text-3xl font-serif text-gray-900 mb-4 mt-8">$1</h2>')
-      .replace(/^# (.*$)/gm, '<h1 class="text-3xl md:text-4xl font-serif text-gray-900 mb-6 mt-8 first:mt-0">$1</h1>')
+      .replace(/^### (.*$)/gm, '<h3 class="text-xl font-serif text-primary mb-4 mt-6">$1</h3>')
+      .replace(/^## (.*$)/gm, '<h2 class="text-2xl md:text-3xl font-serif text-primary mb-4 mt-8">$1</h2>')
+      .replace(/^# (.*$)/gm, '<h1 class="text-3xl md:text-4xl font-serif text-primary mb-6 mt-8 first:mt-0">$1</h1>')
       // Convert bold text
-      .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold">$1</strong>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-primary">$1</strong>')
       // Convert italic text
-      .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+      .replace(/\*(.*?)\*/g, '<em class="italic text-primary">$1</em>')
       // Convert line breaks to paragraphs
       .split('\n\n')
       .map(paragraph => {
@@ -34,14 +34,14 @@ export default function BlogContent({ content, className = '' }: BlogContentProp
             .filter(line => line.trim())
             .map(line => {
               if (line.trim().startsWith('- ')) {
-                return `<li class="text-base md:text-lg leading-relaxed">${line.replace('- ', '')}</li>`;
+                return `<li class="text-base md:text-lg leading-relaxed text-primary font-sans">${line.replace('- ', '')}</li>`;
               }
               return line;
             })
             .join('');
-          return `<ul class="list-disc list-inside space-y-2 mb-6 text-gray-700">${listItems}</ul>`;
+          return `<ul class="list-disc list-inside space-y-2 mb-6 text-primary">${listItems}</ul>`;
         }
-        return `<p class="text-gray-700 leading-relaxed mb-6 text-base md:text-lg">${paragraph}</p>`;
+        return `<p class="text-primary font-sans leading-relaxed mb-6 text-base md:text-lg">${paragraph}</p>`;
       })
       .join('\n');
   };

@@ -23,7 +23,7 @@ export default async function Home() {
           <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
             Recent Blogs
           </h2>
-          <p className="text-body-large max-w-3xl mx-auto text-primary font-medium">
+          <p className="text-body-large max-w-3xl mx-auto text-primary font-sans">
             Discover the latest interior design tips, DIY tutorials, and lifestyle inspiration 
             to help you create the home of your dreams.
           </p>
@@ -67,10 +67,10 @@ export default async function Home() {
               Hi, I&apos;m Ashley Rose
             </h2>
             <div className="space-y-4 text-body-large leading-relaxed">
-              <p className="text-primary font-medium">
+              <p className="text-primary font-sans">
                 Hi, I&apos;m Ashley Rose—a content creator, home decor enthusiast, and mom of four based in Canada. I share real-life moments from our ever-evolving home, mixing DIY projects, second-hand finds, and everyday chaos into something that feels both beautiful and lived in. What started as documenting our home renovation journey has grown into a space where I get to connect with others who love making their homes feel like theirs, even if it&apos;s a little messy along the way.
               </p>
-              <p className="text-primary font-medium">
+              <p className="text-primary font-sans">
                 I believe in progress over perfection, that personality matters more than polish, and that the stories behind the spaces are what truly make them special. Whether it&apos;s a room refresh, a late-night brainstorm, or one of those &quot;I didn&apos;t plan to do this today&quot; kind of projects—I&apos;m here for all of it. Welcome to my corner of the internet.
               </p>
             </div>
@@ -99,10 +99,10 @@ export default async function Home() {
       {/* Instagram Feed Section */}
       <Section spacing="large" background="white">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
             Follow Along on Instagram
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-primary font-sans max-w-2xl mx-auto">
             Join me on Instagram for daily inspiration, behind-the-scenes moments, and more home decor ideas
           </p>
         </div>

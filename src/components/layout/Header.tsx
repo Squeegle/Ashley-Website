@@ -82,6 +82,8 @@ export default function Header() {
                     href={social.href}
                     className={`hover:text-gray-200 transition-colors duration-200`}
                     aria-label={social.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <IconComponent size={18} />
                   </Link>
@@ -123,23 +125,13 @@ export default function Header() {
           <ul className="flex justify-center space-x-8 lg:space-x-12">
             {navigationItems.map((item) => (
               <li key={item.name}>
-                {item.external ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="!text-white text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-white hover:!text-white font-bold"
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="!text-white text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-white hover:!text-white font-bold"
-                  >
-                    {item.name}
-                  </Link>
-                )}
+                <Link
+                  href={item.href}
+                  className="text-white hover:text-white/80 transition-all duration-200 font-medium border-b-2 border-transparent hover:border-primary pb-1"
+                  {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -158,25 +150,13 @@ export default function Header() {
             <ul className="space-y-4">
               {navigationItems.map((item) => (
                 <li key={item.name}>
-                  {item.external ? (
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block !text-white hover:!text-white/80 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="block !text-white hover:!text-white/80 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
+                  <Link
+                    href={item.href}
+                    className="text-white hover:text-white/80 transition-all duration-200 font-medium border-b-2 border-transparent hover:border-primary pb-1"
+                    {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -220,6 +200,8 @@ export default function Header() {
                       href={social.href}
                       className={`text-white ${social.color} transition-colors duration-200`}
                       aria-label={social.name}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <IconComponent size={20} />
                     </Link>

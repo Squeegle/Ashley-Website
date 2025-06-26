@@ -57,6 +57,7 @@ export default function Footer() {
                     href={social.href}
                     className={`p-2 text-contrast ${social.color} transition-colors duration-200 bg-white border border-gray-200 rounded-lg hover:shadow-sm`}
                     aria-label={social.name}
+                    {...(social.name !== 'Email' ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
                     <IconComponent size={18} />
                   </Link>
@@ -68,16 +69,15 @@ export default function Footer() {
           {/* Navigation Section - Takes up 1 column */}
           <div className="lg:col-span-1">
             {footerSections.map((section) => (
-              <div key={section.title} className="mb-8">
-                <h3 className="text-lg font-serif text-contrast mb-4 font-medium">{section.title}</h3>
-                <ul className="space-y-3">
+              <div key={section.title} className="lg:col-span-1">
+                <h3 className="text-lg font-serif text-contrast mb-4">{section.title}</h3>
+                <ul className="space-y-2">
                   {section.links.map((link) => (
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        target={link.external ? '_blank' : undefined}
-                        rel={link.external ? 'noopener noreferrer' : undefined}
-                        className="text-contrast hover:text-gray-600 transition-colors duration-200 font-medium"
+                        className="text-contrast hover:text-contrast/80 transition-colors duration-200 font-medium"
+                        {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       >
                         {link.name}
                       </Link>

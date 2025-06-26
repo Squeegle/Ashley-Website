@@ -46,7 +46,7 @@ export default function BlogCard({ post, className = '' }: BlogCardProps) {
       {/* Content */}
       <div className="p-6">
         {/* Meta Information */}
-        <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+        <div className="flex items-center gap-4 text-sm text-primary font-sans mb-3">
           <time dateTime={post.publishedAt.toISOString()}>
             {formatDate(post.publishedAt)}
           </time>
@@ -62,24 +62,24 @@ export default function BlogCard({ post, className = '' }: BlogCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-serif text-gray-900 mb-3 leading-tight">
+        <h3 className="text-xl font-serif text-primary mb-3 leading-tight">
           <Link 
             href={`/blog/${post.slug}`}
-            className="hover:text-gray-700 transition-colors"
+            className="hover:text-primary/80 transition-colors"
           >
             {post.title}
           </Link>
         </h3>
 
         {/* Excerpt */}
-        <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+        <p className="text-primary font-sans mb-4 leading-relaxed line-clamp-3">
           {post.excerpt}
         </p>
 
         {/* Read More Link */}
         <Link
           href={`/blog/${post.slug}`}
-          className="inline-flex items-center gap-2 text-gray-900 font-semibold hover:gap-3 transition-all duration-200 group"
+          className="inline-flex items-center gap-2 text-primary font-sans font-semibold hover:gap-3 transition-all duration-200 group"
         >
           Read More
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
