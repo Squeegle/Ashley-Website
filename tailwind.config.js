@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         serif: ['var(--font-blank-mango)', 'Georgia', 'serif'],
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
       colors: {
         contrast: 'var(--text-contrast)',

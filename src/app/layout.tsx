@@ -5,9 +5,9 @@ import "./globals.css";
 import { MainLayout } from "@/components/layout";
 
 // Modern sans-serif font for body text
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const dmSans = localFont({
+  src: '../fonts/DMSans-Regular.ttf',
+  variable: '--font-dm-sans',
   display: 'swap',
 });
 
@@ -60,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${blankMango.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${playfair.variable} ${blankMango.variable}`}>
       <body className="antialiased font-sans bg-white">
         <MainLayout>
           {children}
