@@ -134,7 +134,7 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
               </div>
               <h3 className="text-xl font-serif text-primary mb-2">Thank you for subscribing!</h3>
               <p className="text-primary">
-                We're excited to share our latest updates with you.
+                We&apos;re excited to share our latest updates with you.
               </p>
             </div>
           ) : (
