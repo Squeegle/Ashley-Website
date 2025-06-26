@@ -16,7 +16,7 @@ import { BlogPost } from '@/types';
  */
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Interior Design Blog',
   description: 'DIY tutorials, decor tips, and lifestyle inspiration. Transform your space with creative projects and design ideas.',
 };
 

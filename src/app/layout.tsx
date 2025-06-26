@@ -27,8 +27,8 @@ const blankMango = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "At home with Rose | Interior Design & Lifestyle",
-    template: "%s | At home with Rose"
+    default: "At home with Rose",
+    template: "At home with Rose | %s"
   },
   description: "Creating beautiful, functional spaces that tell your story. Interior design and lifestyle inspiration for the modern home.",
   keywords: ["interior design", "home decor", "lifestyle", "design inspiration", "modern home"],
