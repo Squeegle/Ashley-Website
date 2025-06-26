@@ -168,10 +168,10 @@ export function HomeHero() {
       {/* Content */}
       <div className="relative text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white mb-4 md:mb-6 leading-tight font-bold">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-primary mb-4 md:mb-6 leading-tight font-bold">
             Creating Spaces That Tell Your Story
           </h1>
-          <p className="text-base md:text-lg text-white mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-semibold">
+          <p className="text-base md:text-lg text-primary mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-semibold">
             Transform your home into a reflection of your personality with thoughtful design, curated aesthetics, and functional beauty.
           </p>
         </div>

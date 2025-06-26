@@ -90,7 +90,7 @@ export default function Footer() {
 
           {/* Newsletter Section - Takes up 3 columns */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+            <div className="bg-secondary p-0">
               <h3 className="text-2xl font-serif text-contrast mb-3 font-medium">
                 Get Weekly Updates
               </h3>
@@ -115,7 +115,7 @@ export default function Footer() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-primary text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
+                  className="w-full px-6 py-3 bg-primary !text-white hover:!text-white rounded-md hover:bg-primary-dark transition-colors duration-200 font-semibold"
                 >
                   Subscribe
                 </button>
@@ -123,12 +123,16 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <p className="text-center text-contrast font-medium">
-            © {new Date().getFullYear()} Ashley Rose. All rights reserved.
-          </p>
+      {/* Bottom trim with copyright */}
+      <div className="bg-primary [&_*]:!text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center items-center py-2">
+            <p className="text-sm font-medium">
+              © {new Date().getFullYear()} Ashley Rose. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

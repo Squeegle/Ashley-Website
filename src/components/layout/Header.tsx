@@ -107,10 +107,10 @@ export default function Header() {
           {/* Logo/Brand Name - Centered */}
           <div className="flex-1 flex justify-center md:justify-center">
             <Link href="/" className="block">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#454140] text-center text-crisp font-medium">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-primary text-center text-crisp font-medium">
                 At home with Rose
               </h1>
-              <p className="text-sm text-[#454140] text-center mt-1 font-semibold tracking-wide">
+              <p className="text-sm text-primary text-center mt-1 font-semibold tracking-wide">
                 Interior Design & Lifestyle
               </p>
             </Link>
@@ -128,14 +128,14 @@ export default function Header() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-bold"
+                    className="text-secondary text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-secondary hover:text-secondary font-bold"
                   >
                     {item.name}
                   </a>
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-bold"
+                    className="text-secondary text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-secondary hover:text-secondary font-bold"
                   >
                     {item.name}
                   </Link>
@@ -163,7 +163,7 @@ export default function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-contrast hover:text-gray-800 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
+                      className="block text-secondary hover:text-secondary font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
@@ -171,7 +171,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block text-contrast hover:text-gray-800 font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
+                      className="block text-secondary hover:text-secondary font-semibold py-2 border-b border-gray-100 last:border-b-0 transition-colors duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
@@ -218,7 +218,7 @@ export default function Header() {
                     <Link
                       key={social.name}
                       href={social.href}
-                      className={`text-contrast ${social.color} transition-colors duration-200`}
+                      className={`text-secondary ${social.color} transition-colors duration-200`}
                       aria-label={social.name}
                     >
                       <IconComponent size={20} />

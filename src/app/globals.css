@@ -35,7 +35,7 @@
   }
 
   p, span, div, li, td, th {
-    @apply text-secondary;
+    @apply text-primary;
   }
 
   nav, nav a, nav button {
@@ -50,11 +50,11 @@
     --foreground: #ededed;
     --primary: #454140;
     --secondary: #A3B3A2;
-    --text-primary: #f9fafb;
+    --text-primary: var(--primary);
     --text-secondary: var(--secondary);
     --text-muted: #d1d5db;
     --text-accent: var(--secondary);
-    --text-nav: #f9fafb;
+    --text-nav: var(--primary);
     --text-strong: #ffffff;
   }
 }
@@ -67,11 +67,10 @@
   -moz-osx-font-smoothing: grayscale !important;
 }
 
-/* Ensure no elements have unwanted opacity */
+/* Remove color inheritance override */
 main, section, div, p, h1, h2, h3, h4, h5, h6, span, a {
   opacity: 1 !important;
   visibility: visible !important;
-  color: inherit !important;
 }
 
 /* Typography improvements with better contrast */
@@ -85,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Ensure all text is visible and properly contrasted */
 p, span, div, li, td, th {
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 /* Navigation and interactive elements */
@@ -168,13 +167,11 @@ img {
 
 /* Enhanced typography classes with better visibility */
 .text-body {
-  color: var(--text-secondary) !important;
   line-height: 1.7;
   font-weight: 400;
 }
 
 .text-body-large {
-  color: var(--text-secondary) !important;
   font-size: 1.125rem;
   line-height: 1.7;
   font-weight: 400;

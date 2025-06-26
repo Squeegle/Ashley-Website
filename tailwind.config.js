@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         contrast: 'var(--text-contrast)',
         primary: '#454140',
+        'primary-dark': '#353130',
         secondary: '#A3B3A2',
       },
     },
