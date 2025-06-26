@@ -21,7 +21,7 @@ export default function Footer() {
         { name: 'Home', href: '/' },
         { name: 'About', href: '/about' },
         { name: 'Blog', href: '/blog' },
-        { name: 'Shop', href: 'https://your-merch-site.com', external: true },
+        { name: 'Shop', href: 'https://www.shopltk.com/explore/Ashley_Rose/', external: true },
       ],
     },
 

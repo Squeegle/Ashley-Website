@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 import { MainLayout } from "@/components/layout";

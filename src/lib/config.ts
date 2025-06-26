@@ -35,6 +35,11 @@ export const mainNav: NavItem[] = [
     title: "Blog",
     href: "/blog",
     description: "DIY tutorials, decor tips, and lifestyle content"
+  },
+  {
+    title: "Shop",
+    href: "https://www.shopltk.com/explore/Ashley_Rose/",
+    description: "Shop my favorite home decor and lifestyle products"
   }
 ]
 
