@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Home } from 'lucide-react'; // Placeholder Icon
+import Image from 'next/image';
 
 interface LandingSequenceProps {
   onComplete: () => void;
@@ -73,10 +73,10 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
     textAlign: 'center',
   };
 
-  const iconStyle: React.CSSProperties = {
-    width: '192px', // Much larger size for better visibility
+  const iconContainerStyle: React.CSSProperties = {
+    position: 'relative',
+    width: '192px',
     height: '192px',
-    objectFit: 'contain',
   };
   
   if (step === 5) return null; // Sequence finished, render nothing
@@ -114,11 +114,16 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
               transition: `opacity ${FADE_DURATION}ms ease-in-out`,
             }}
           >
-            <img 
-              src="/icons/android-chrome-192x192.png" // Using the 192x192 version for better quality
-              alt="At home with Rose"
-              style={iconStyle}
-            />
+            <div style={iconContainerStyle}>
+              <Image
+                src="/icons/android-chrome-192x192.png"
+                alt="At home with Rose"
+                fill
+                priority
+                sizes="192px"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
         </div>
       )}
     </>
