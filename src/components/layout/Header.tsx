@@ -26,7 +26,7 @@ export default function Header() {
 
   // Social media links
   const socialLinks = [
-    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/ashleyrosep?igsh=eDhtaWRlcTY2MXpz', color: 'hover:text-pink-600' },
     { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
   ];

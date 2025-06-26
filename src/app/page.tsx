@@ -108,11 +108,11 @@ export default async function Home() {
             Get daily design inspiration and behind-the-scenes glimpses on Instagram
           </p>
           <Link
-            href="#"
+            href="https://www.instagram.com/ashleyrosep?igsh=eDhtaWRlcTY2MXpz"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-md hover:from-purple-600 hover:to-pink-600 transition-all duration-200 font-semibold"
           >
             <Instagram className="w-5 h-5" />
-            @ashleyrose.design
+            @ashleyrosep
           </Link>
         </div>
 

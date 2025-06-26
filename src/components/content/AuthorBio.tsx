@@ -20,7 +20,7 @@ export default function AuthorBio({ author, className = '' }: AuthorBioProps) {
     name: author,
     bio: "Hi! I'm Ashley Rose, a DIY enthusiast and home decor lover sharing my passion for creating beautiful, functional spaces on any budget. When I'm not renovating rooms or crafting, you'll find me hunting for vintage treasures and dreaming up my next project.",
     image: "/images/author/ashley-rose.jpg",
-    instagram: "@ashleyrose.design",
+    instagram: "ashleyrosep",
     email: "hello@ashleyrose.com",
   };
 

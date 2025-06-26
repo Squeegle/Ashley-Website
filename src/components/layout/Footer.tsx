@@ -27,7 +27,7 @@ export default function Footer() {
 
   // Social media links
   const socialLinks = [
-    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/ashleyrosep?igsh=eDhtaWRlcTY2MXpz', color: 'hover:text-pink-600' },
     { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
     { name: 'Email', icon: Mail, href: 'mailto:hello@ashleyrose.com', color: 'hover:text-gray-600' },
