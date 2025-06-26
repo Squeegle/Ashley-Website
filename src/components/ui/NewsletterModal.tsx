@@ -119,7 +119,7 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
               />
             </div>
             <h2 id="modal-title" className="text-2xl md:text-3xl font-serif text-gray-900 mb-3">
-              Stay Inspired
+              Get Weekly Updates
             </h2>
             <p className="text-gray-600 text-base leading-relaxed max-w-sm mx-auto">
               Get weekly design inspiration, styling tips, and exclusive content delivered to your inbox.

@@ -2,10 +2,9 @@ import Link from 'next/link';
 import { Instagram, Facebook, Youtube, Mail, Heart } from 'lucide-react';
 
 /**
- * Footer Component - Site footer with links, social media, and newsletter signup
+ * Footer Component - Main navigation and branding for the website
  * Features:
- * - Newsletter subscription
- * - Multiple organized content sections
+ * - Newsletter subscription on the right
  * - Social media links
  * - Contact information
  * - Quick navigation links
@@ -13,7 +12,7 @@ import { Instagram, Facebook, Youtube, Mail, Heart } from 'lucide-react';
  * - Clean, minimal design with better visual hierarchy
  */
 export default function Footer() {
-  // Footer navigation organized by sections for better distribution
+  // Footer navigation organized by sections
   const footerSections = [
     {
       title: 'Explore',
@@ -24,17 +23,7 @@ export default function Footer() {
         { name: 'Shop', href: 'https://www.shopltk.com/explore/Ashley_Rose/', external: true },
       ],
     },
-
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Design Tips', href: '/blog' },
-        { name: 'Style Guide', href: '/blog' },
-      ],
-    },
   ];
-
-
 
   // Social media links
   const socialLinks = [
@@ -45,58 +34,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      {/* Newsletter Section */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Newsletter Content */}
-            <div className="text-center lg:text-left">
-              <h3 className="text-3xl md:text-4xl font-serif text-contrast mb-4 font-medium">
-                Stay Inspired
-              </h3>
-              <p className="text-lg text-contrast mb-6 leading-relaxed font-medium">
-                Get weekly design inspiration, styling tips, and exclusive behind-the-scenes content delivered straight to your inbox.
-              </p>
-              <div className="flex items-center justify-center lg:justify-start space-x-4 text-sm text-contrast">
-                <span className="flex items-center">
-                  <Heart size={16} className="text-red-500 mr-2" />
-                  10,000+ subscribers
-                </span>
-                <span>•</span>
-                <span>Weekly updates</span>
-                <span>•</span>
-                <span>No spam, ever</span>
-              </div>
-            </div>
-            
-            {/* Newsletter Form */}
-            <div className="max-w-md mx-auto lg:mx-0 lg:ml-auto">
-              <form className="space-y-4">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent text-contrast font-medium"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 font-semibold whitespace-nowrap"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-                <p className="text-xs text-contrast font-medium">
-                  By subscribing, you agree to our privacy policy. Unsubscribe at any time.
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer Content */}
+    <footer className="bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
           
@@ -127,76 +65,70 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation Sections - Each takes 1 column */}
-          {footerSections.map((section) => (
-            <div key={section.title} className="lg:col-span-1">
-              <h3 className="text-sm font-bold text-contrast uppercase tracking-wide mb-4">
-                {section.title}
-              </h3>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    {link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-contrast hover:text-gray-700 transition-colors duration-200 font-medium block py-1"
-                      >
-                        {link.name}
-                      </a>
-                    ) : (
+          {/* Navigation Section - Takes up 1 column */}
+          <div className="lg:col-span-1">
+            {footerSections.map((section) => (
+              <div key={section.title} className="mb-8">
+                <h3 className="text-lg font-serif text-contrast mb-4 font-medium">{section.title}</h3>
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="text-sm text-contrast hover:text-gray-700 transition-colors duration-200 font-medium block py-1"
+                        target={link.external ? '_blank' : undefined}
+                        rel={link.external ? 'noopener noreferrer' : undefined}
+                        className="text-contrast hover:text-gray-600 transition-colors duration-200 font-medium"
                       >
                         {link.name}
                       </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-
-        </div>
-      </div>
-
-      {/* Bottom Footer */}
-      <div className="border-t border-gray-200 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-            
-            {/* Copyright */}
-            <div className="flex items-center space-x-1 text-sm text-contrast font-medium">
-              <span>© {new Date().getFullYear()} Ashley Rose Design.</span>
-              <span>Made with</span>
-              <Heart size={14} className="text-red-500 fill-current" />
-              <span>for beautiful spaces.</span>
-            </div>
-            
-            {/* Legal Links */}
-            <div className="flex items-center space-x-6 text-sm">
-              <Link href="/privacy" className="text-contrast hover:text-gray-700 transition-colors duration-200 font-medium">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-contrast hover:text-gray-700 transition-colors duration-200 font-medium">
-                Terms of Service
-              </Link>
-              <Link href="/cookies" className="text-contrast hover:text-gray-700 transition-colors duration-200 font-medium">
-                Cookie Policy
-              </Link>
-            </div>
-
-            {/* Back to Top Link */}
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-sm text-contrast hover:text-gray-700 transition-colors duration-200 font-medium flex items-center"
-            >
-              Back to Top ↑
-            </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
+
+          {/* Newsletter Section - Takes up 3 columns */}
+          <div className="lg:col-span-3">
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="text-2xl font-serif text-contrast mb-3 font-medium">
+                Get Weekly Updates
+              </h3>
+              <p className="text-contrast mb-6 leading-relaxed font-medium">
+                Get weekly design inspiration, styling tips, and exclusive behind-the-scenes content delivered straight to your inbox.
+              </p>
+              <div className="flex items-center space-x-4 text-sm text-contrast mb-4">
+                <span className="flex items-center">
+                  <Heart size={16} className="text-red-500 mr-2" />
+                  10,000+ subscribers
+                </span>
+                <span>•</span>
+                <span>No spam, ever</span>
+              </div>
+              <form className="space-y-4">
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full px-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-primary text-white rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <p className="text-center text-contrast font-medium">
+            © {new Date().getFullYear()} Ashley Rose. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -20,7 +20,7 @@ export default async function Home() {
       <HomeHero />
 
       {/* Recent Blogs Section - Vertical Alternating Layout */}
-      <Section spacing="large">
+      <Section spacing="large" background="white">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
             Recent Blogs
@@ -35,11 +35,17 @@ export default async function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="space-y-12 lg:space-y-16">
             {recentBlogs.map((blog, index) => (
-              <AlternatingBlogCard
-                key={blog.id}
-                blog={blog}
-                isReversed={index % 2 === 1}
-              />
+              <div key={blog.id}>
+                <AlternatingBlogCard
+                  blog={blog}
+                  isReversed={index % 2 === 1}
+                />
+                {index < recentBlogs.length - 1 && (
+                  <div className="mt-12 lg:mt-16 -mx-4 sm:-mx-6 lg:-mx-8">
+                    <div className="w-screen relative left-1/2 right-1/2 -translate-x-1/2 h-[1px] bg-secondary"></div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
@@ -56,24 +62,24 @@ export default async function Home() {
       </Section>
 
       {/* About Section - Hi, I'm Ashley Rose */}
-      <Section spacing="large" background="gray">
+      <Section spacing="large" background="secondary">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif !text-primary mb-6">
               Hi, I&apos;m Ashley Rose
             </h2>
             <div className="space-y-4 text-body-large leading-relaxed">
-              <p className="text-contrast font-medium">
+              <p className="!text-primary font-medium">
                 Hi, I&apos;m Ashley Rose—a content creator, home decor enthusiast, and mom of four based in Canada. I share real-life moments from our ever-evolving home, mixing DIY projects, second-hand finds, and everyday chaos into something that feels both beautiful and lived in. What started as documenting our home renovation journey has grown into a space where I get to connect with others who love making their homes feel like theirs, even if it&apos;s a little messy along the way.
               </p>
-              <p className="text-contrast font-medium">
+              <p className="!text-primary font-medium">
                 I believe in progress over perfection, that personality matters more than polish, and that the stories behind the spaces are what truly make them special. Whether it&apos;s a room refresh, a late-night brainstorm, or one of those &quot;I didn&apos;t plan to do this today&quot; kind of projects—I&apos;m here for all of it. Welcome to my corner of the internet.
               </p>
             </div>
             <div className="mt-8">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white dark-button-text rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white dark-button-text rounded-md hover:bg-gray-800 transition-colors duration-200 font-semibold"
               >
                 Learn More About Me
                 <ArrowRight className="w-4 h-4" />
@@ -84,8 +90,8 @@ export default async function Home() {
             <div className="relative h-96 md:h-[32rem] rounded-lg overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
               <div className="text-center">
                 <div className="text-6xl mb-4">👩‍🎨</div>
-                <p className="text-sm font-semibold text-contrast">Ashley Rose Portrait</p>
-                <p className="text-xs text-contrast font-medium">Coming Soon</p>
+                <p className="text-sm font-semibold !text-primary">Ashley Rose Portrait</p>
+                <p className="text-xs !text-primary font-medium">Coming Soon</p>
               </div>
             </div>
           </div>
@@ -93,7 +99,7 @@ export default async function Home() {
       </Section>
 
       {/* Instagram Section */}
-      <Section spacing="medium">
+      <Section spacing="medium" background="white">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-serif text-contrast mb-4">
             Follow Along

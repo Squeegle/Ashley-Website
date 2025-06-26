@@ -65,7 +65,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
       {/* Top bar with social links - hidden on mobile */}
-      <div className="hidden md:block bg-gray-50 border-b border-gray-100">
+      <div className="hidden md:block bg-primary border-b border-gray-100 [&_*]:!text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-2">
             {/* Left side - empty for balance */}
@@ -73,14 +73,14 @@ export default function Header() {
             
             {/* Right side - Social links */}
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-contrast font-medium">Follow us:</span>
+              <span className="text-sm font-medium">Follow us:</span>
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
                   <Link
                     key={social.name}
                     href={social.href}
-                    className={`text-contrast ${social.color} transition-colors duration-200`}
+                    className={`hover:text-gray-200 transition-colors duration-200`}
                     aria-label={social.name}
                   >
                     <IconComponent size={18} />
@@ -107,10 +107,10 @@ export default function Header() {
           {/* Logo/Brand Name - Centered */}
           <div className="flex-1 flex justify-center md:justify-center">
             <Link href="/" className="block">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-contrast text-center text-crisp font-medium">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#454140] text-center text-crisp font-medium">
                 At home with Rose
               </h1>
-              <p className="text-sm text-contrast text-center mt-1 font-semibold tracking-wide">
+              <p className="text-sm text-[#454140] text-center mt-1 font-semibold tracking-wide">
                 Interior Design & Lifestyle
               </p>
             </Link>
@@ -128,14 +128,14 @@ export default function Header() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
+                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-bold"
                   >
                     {item.name}
                   </a>
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-semibold"
+                    className="text-contrast text-sm lg:text-base uppercase transition-colors duration-200 border-b-2 border-transparent hover:border-gray-600 hover:text-gray-800 font-bold"
                   >
                     {item.name}
                   </Link>

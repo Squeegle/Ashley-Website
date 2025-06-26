@@ -164,17 +164,14 @@ export default function Hero({
 // Homepage Hero
 export function HomeHero() {
   return (
-    <div className="relative h-96 md:h-[32rem] lg:h-[40rem] overflow-hidden bg-gray-100 flex items-center justify-center">
-      {/* Placeholder background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-300"></div>
-      
+    <div className="relative h-96 md:h-[32rem] lg:h-[40rem] overflow-hidden bg-secondary flex items-center justify-center">
       {/* Content */}
       <div className="relative text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 mb-4 md:mb-6 leading-tight font-bold">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-white mb-4 md:mb-6 leading-tight font-bold">
             Creating Spaces That Tell Your Story
           </h1>
-          <p className="text-base md:text-lg text-gray-800 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-semibold">
+          <p className="text-base md:text-lg text-white mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto font-semibold">
             Transform your home into a reflection of your personality with thoughtful design, curated aesthetics, and functional beauty.
           </p>
         </div>

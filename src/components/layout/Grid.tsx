@@ -239,7 +239,7 @@ export function Container({
 interface SectionProps {
   children: ReactNode;
   spacing?: 'small' | 'medium' | 'large';
-  background?: 'white' | 'gray' | 'none';
+  background?: 'white' | 'gray' | 'secondary' | 'none';
   className?: string;
 }
 
@@ -260,6 +260,7 @@ export function Section({
   const backgroundClasses = {
     white: 'bg-white',
     gray: 'bg-gray-50',
+    secondary: 'bg-secondary',
     none: ''
   };
 
