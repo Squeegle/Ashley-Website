@@ -65,6 +65,7 @@ export interface SocialLinks {
   spotify?: string
   pinterest?: string
   tiktok?: string
+  facebook?: string
   email?: string
 }
 

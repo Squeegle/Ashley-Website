@@ -25,7 +25,7 @@ export default function ShareButtons({ post, className = '' }: ShareButtonsProps
 
   const shareLinks = {
     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    facebook: `https://www.facebook.com/share/1Cpr5LSvy6/`,
   };
 
   const copyToClipboard = async () => {

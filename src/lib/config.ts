@@ -14,6 +14,7 @@ export const siteConfig: SiteConfig = {
     youtube: "https://youtube.com/@ashleyrose", // Update with actual channel
     spotify: "https://open.spotify.com/show/ashleyrose", // Update with actual podcast
     pinterest: "https://pinterest.com/ashleyrose", // Update with actual profile
+    facebook: "https://www.facebook.com/share/1Cpr5LSvy6/", // Facebook profile
     email: "hello@ashleyrose.com" // Update with actual email
   }
 }
