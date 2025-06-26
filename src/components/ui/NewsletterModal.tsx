@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { X, Mail } from 'lucide-react';
+import { X, Mail, Check } from 'lucide-react';
 import Image from 'next/image';
 
 /**
@@ -118,22 +118,24 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
                 priority
               />
             </div>
-            <h2 id="modal-title" className="text-2xl md:text-3xl font-serif text-gray-900 mb-3">
+            <h2 id="modal-title" className="text-2xl md:text-3xl font-serif text-primary mb-3">
               Get Weekly Updates
             </h2>
-            <p className="text-gray-600 text-base leading-relaxed max-w-sm mx-auto">
+            <p className="text-primary text-base leading-relaxed max-w-sm mx-auto">
               Get weekly design inspiration, styling tips, and exclusive content delivered to your inbox.
             </p>
           </div>
 
           {/* Success state */}
           {isSuccess ? (
-            <div className="text-center py-4">
+            <div className="text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
-                <Mail className="w-6 h-6 text-green-600" />
+                <Check className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Welcome aboard!</h3>
-              <p className="text-gray-600">You&apos;ll receive your first inspiration email soon.</p>
+              <h3 className="text-xl font-serif text-primary mb-2">Thank you for subscribing!</h3>
+              <p className="text-primary">
+                We're excited to share our latest updates with you.
+              </p>
             </div>
           ) : (
             /* Sign-up form */
@@ -144,16 +146,16 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
                   Email address
                 </label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-primary" />
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-primary placeholder-gray-400"
                     required
-                    disabled={isSubmitting}
                   />
                 </div>
                 {error && (
@@ -165,7 +167,7 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
               <button
                 type="submit"
                 disabled={isSubmitting || !email}
-                className="w-full py-3 px-6 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white dark-button-text rounded-md hover:bg-primary-dark transition-colors duration-200 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
@@ -184,7 +186,7 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
 
           {/* Privacy note */}
           {!isSuccess && (
-            <p className="text-xs text-gray-500 text-center mt-4">
+            <p className="text-xs text-primary text-center mt-4">
               No spam, unsubscribe at any time.
             </p>
           )}
