@@ -34,6 +34,21 @@ export const metadata: Metadata = {
   keywords: ["interior design", "home decor", "lifestyle", "design inspiration", "modern home"],
   authors: [{ name: "Ashley Rose" }],
   creator: "Ashley Rose",
+  manifest: '/icons/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/favicon.ico', sizes: '48x48' }
+    ],
+    apple: [
+      { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+    other: [
+      { url: '/icons/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+    ]
+  },
   openGraph: {
     title: "At home with Rose | Interior Design & Lifestyle",
     description: "Creating beautiful, functional spaces that tell your story.",

@@ -61,20 +61,22 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white', // Or your site's background color
-    zIndex: 100, // Ensure it's on top
+    backgroundColor: '#ffffff', // Match icon's background color
+    zIndex: 100,
     transition: `opacity ${FADE_DURATION}ms ease-in-out`,
   };
 
   const textStyle: React.CSSProperties = {
-    fontSize: '3rem', // Adjust as needed
+    fontSize: '3rem',
     fontWeight: 'bold',
-    color: 'black', // Adjust as needed
+    color: '#454140', // Primary color
     textAlign: 'center',
   };
 
   const iconStyle: React.CSSProperties = {
-    color: 'black', // Adjust as needed
+    width: '192px', // Much larger size for better visibility
+    height: '192px',
+    objectFit: 'contain',
   };
   
   if (step === 5) return null; // Sequence finished, render nothing
@@ -112,9 +114,11 @@ export default function LandingSequence({ onComplete }: LandingSequenceProps) {
               transition: `opacity ${FADE_DURATION}ms ease-in-out`,
             }}
           >
-            <div style={iconStyle}>
-              <Home size={64} /> {/* Placeholder icon, adjust size as needed */}
-            </div>
+            <img 
+              src="/icons/android-chrome-192x192.png" // Using the 192x192 version for better quality
+              alt="At home with Rose"
+              style={iconStyle}
+            />
         </div>
       )}
     </>
