@@ -14,7 +14,7 @@
   
   /* Custom font variables */
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-blank-mango);
 }
 
 @theme inline {

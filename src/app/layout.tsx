@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 import { MainLayout } from "@/components/layout";
 
@@ -14,6 +15,13 @@ const inter = Inter({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: 'swap',
+});
+
+// Blank Mango font for headings
+const blankMango = localFont({
+  src: '../fonts/black-mango-regular.ttf',
+  variable: '--font-blank-mango',
   display: 'swap',
 });
 
@@ -52,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${blankMango.variable}`}>
       <body className="antialiased font-sans bg-white">
         <MainLayout>
           {children}
