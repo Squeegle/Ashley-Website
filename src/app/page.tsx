@@ -1,6 +1,6 @@
 import { Section } from "@/components/layout";
 import Link from "next/link";
-import { ArrowRight, Instagram, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { getAllBlogPosts } from "@/lib/blog";
 import { BlogPost } from "@/types";
 import { getLatestInstagramPosts } from '@/lib/services/instagram';

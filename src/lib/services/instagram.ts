@@ -8,6 +8,19 @@ import { InstagramPost } from '@/types';
 
 const INSTAGRAM_API_URL = 'https://graph.instagram.com/me/media';
 
+/**
+ * Interface for Instagram API response data
+ */
+interface InstagramApiPost {
+  id: string;
+  caption: string | null;
+  media_type: string;
+  media_url: string;
+  permalink: string;
+  thumbnail_url?: string;
+  timestamp: string;
+}
+
 export async function getLatestInstagramPosts(limit: number = 9): Promise<InstagramPost[]> {
   const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
   
@@ -27,7 +40,7 @@ export async function getLatestInstagramPosts(limit: number = 9): Promise<Instag
 
     const data = await response.json();
     
-    return data.data.map((post: any) => ({
+    return data.data.map((post: InstagramApiPost) => ({
       id: post.id,
       caption: post.caption || '',
       mediaUrl: post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url,
