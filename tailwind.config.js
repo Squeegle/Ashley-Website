@@ -13,6 +13,8 @@ module.exports = {
       },
       colors: {
         contrast: 'var(--text-contrast)',
+        primary: '#454140',
+        secondary: '#A3B3A2',
       },
     },
   },
