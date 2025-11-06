@@ -12,6 +12,8 @@ export default function BlogContent({ content, className = '' }: BlogContentProp
   // Simple content processing - convert basic markdown to HTML
   const processContent = (markdown: string) => {
     return markdown
+      // Convert images FIRST (before other processing)
+      .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" class="max-w-xl w-full h-auto rounded-lg shadow-md my-8 mx-auto" />')
       // Convert headers
       .replace(/^### (.*$)/gm, '<h3 class="text-xl font-serif text-primary mb-4 mt-6">$1</h3>')
       .replace(/^## (.*$)/gm, '<h2 class="text-2xl md:text-3xl font-serif text-primary mb-4 mt-8">$1</h2>')
@@ -24,7 +26,7 @@ export default function BlogContent({ content, className = '' }: BlogContentProp
       .split('\n\n')
       .map(paragraph => {
         if (paragraph.trim() === '') return '';
-        if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol')) {
+        if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol') || paragraph.startsWith('<img')) {
           return paragraph;
         }
         // Handle list items

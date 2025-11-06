@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { getAllBlogPosts } from "@/lib/blog";
 import { BlogPost } from "@/types";
@@ -137,16 +138,16 @@ function AlternatingBlogCard({ blog, isReversed }: AlternatingBlogCardProps) {
       }`}>
         
         {/* Image Section */}
-        <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-stone-100 to-stone-200 aspect-[4/3] ${
+        <div className={`relative overflow-hidden rounded-2xl aspect-[4/3] ${
           isReversed ? 'lg:order-2' : 'lg:order-1'
         }`}>
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="text-center text-primary">
-              <div className="text-4xl mb-4">📷</div>
-              <p className="text-lg font-medium">Featured Image</p>
-              <p className="text-sm">Coming Soon</p>
-            </div>
-          </div>
+          <Image
+            src={blog.featuredImage}
+            alt={blog.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
           
           {/* Subtle overlay effect */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
