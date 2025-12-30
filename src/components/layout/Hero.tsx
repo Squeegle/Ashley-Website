@@ -180,15 +180,14 @@ export function HomeHero() {
   );
 }
 
-// Blog Post Hero
+// Blog Post Hero - Image only, no text overlay
+// Title and metadata are displayed below the image in the article content
 export function BlogHero({ 
-  title, 
-  subtitle, 
   imageSrc, 
   imageAlt 
 }: { 
-  title: string; 
-  subtitle?: string; 
+  title?: string;  // Kept for backwards compatibility but not displayed
+  subtitle?: string;  // Kept for backwards compatibility but not displayed
   imageSrc: string; 
   imageAlt: string; 
 }) {
@@ -196,11 +195,8 @@ export function BlogHero({
     <Hero
       imageSrc={imageSrc}
       imageAlt={imageAlt}
-      subtitle={subtitle}
-      title={title}
       height="medium"
-      textPosition="bottom-left"
-      overlay="gradient"
+      overlay="none"
     />
   );
 }

@@ -2,8 +2,8 @@
   "subscribers": [
     {
       "email": "remi.gould@gmail.com",
-      "unsubscribeToken": "585d3515-4081-48a5-90fc-6daec2ef9385",
-      "subscribedAt": "2025-12-30T14:45:30.104Z",
+      "unsubscribeToken": "be31110f-cab4-4df9-8941-ba4b0e454f86",
+      "subscribedAt": "2025-12-30T15:58:18.961Z",
       "isActive": true
     },
     {
@@ -13,5 +13,5 @@
       "isActive": true
     }
   ],
-  "lastUpdated": "2025-12-30T14:55:03.565Z"
+  "lastUpdated": "2025-12-30T15:58:18.962Z"
 }

@@ -340,7 +340,33 @@ img {
 p, span, div, label, input, textarea, select, h1, h2, h3, h4, h5, h6, a, button {
   opacity: 1 !important;
   visibility: visible !important;
-  color: inherit !important;
+}
+
+/* Overlay text - white text for use on dark image overlays */
+/* Use .overlay-text-white class on the container to enable white text for all children */
+.overlay-text-white,
+.overlay-text-white p,
+.overlay-text-white span,
+.overlay-text-white h1,
+.overlay-text-white h2,
+.overlay-text-white h3,
+.overlay-text-white h4,
+.overlay-text-white h5,
+.overlay-text-white h6,
+.overlay-text-white time {
+  color: #ffffff !important;
+}
+
+/* Ensure buttons with dark-button-text class have white text */
+.overlay-text-white .dark-button-text,
+.overlay-text-white .dark-button-text span {
+  color: #ffffff !important;
+}
+
+/* Slightly transparent white for secondary overlay text (like excerpts) */
+.overlay-text-white-90,
+.overlay-text-white-90 p {
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Specific fixes for form elements */

@@ -45,11 +45,11 @@ export default function FeaturedBlogCard({ post, className = '' }: FeaturedBlogC
             </div>
           )}
 
-          {/* Content Overlay */}
+          {/* Content Overlay - Uses overlay-text-white class for white text on dark gradient */}
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 lg:p-12">
-            <div className="max-w-4xl">
-              {/* Meta Information */}
-              <div className="flex items-center gap-4 text-sm text-primary font-sans mb-4">
+            <div className="max-w-4xl overlay-text-white">
+              {/* Meta Information - White text for visibility on dark gradient */}
+              <div className="flex items-center gap-4 text-sm font-sans mb-4">
                 <time dateTime={post.publishedAt.toISOString()}>
                   {formatDate(post.publishedAt)}
                 </time>
@@ -57,25 +57,25 @@ export default function FeaturedBlogCard({ post, className = '' }: FeaturedBlogC
                   <>
                     <span>•</span>
                     <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
+                      <Clock className="w-4 h-4 text-white" style={{ color: '#ffffff' }} />
                       <span>{post.readTime} min read</span>
                     </div>
                   </>
                 )}
               </div>
 
-              {/* Title */}
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-primary mb-4 leading-tight">
+              {/* Title - White text for visibility on dark gradient */}
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif mb-4 leading-tight">
                 {post.title}
               </h2>
 
-              {/* Excerpt */}
-              <p className="text-lg text-primary font-sans mb-6 leading-relaxed line-clamp-2 max-w-2xl">
+              {/* Excerpt - White text with slight transparency for visual hierarchy */}
+              <p className="text-lg font-sans mb-6 leading-relaxed line-clamp-2 max-w-2xl overlay-text-white-90">
                 {post.excerpt}
               </p>
 
-              {/* Read More Button */}
-              <div className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary font-sans rounded-md hover:bg-gray-100 transition-all duration-200 font-semibold group-hover:gap-3">
+              {/* Read More Button - Dark background with white text for visibility on overlay */}
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-sans rounded-md hover:bg-primary-dark transition-all duration-200 font-semibold group-hover:gap-3 dark-button-text">
                 Read Full Article
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
