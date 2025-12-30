@@ -1,10 +1,13 @@
+'use client';
+
+import { useState, FormEvent } from 'react';
 import Link from 'next/link';
-import { Instagram, Facebook, Youtube, Mail, Heart } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Mail, Heart, Check, Loader2 } from 'lucide-react';
 
 /**
  * Footer Component - Main navigation and branding for the website
  * Features:
- * - Newsletter subscription on the right
+ * - Newsletter subscription on the right (connected to subscribe API)
  * - Social media links
  * - Contact information
  * - Quick navigation links
@@ -12,6 +15,64 @@ import { Instagram, Facebook, Youtube, Mail, Heart } from 'lucide-react';
  * - Clean, minimal design with better visual hierarchy
  */
 export default function Footer() {
+  // Newsletter form state
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
+
+  /**
+   * Handle newsletter form submission
+   * Validates email and sends to the subscribe API endpoint
+   */
+  const handleNewsletterSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setError('');
+
+    // Basic email validation (client-side for immediate feedback)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Call the newsletter subscribe API endpoint
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      // Parse the response from the server
+      const data = await response.json();
+
+      // Check if the subscription was successful
+      if (response.ok && data.success) {
+        // Subscription successful - show success state
+        setIsSuccess(true);
+        setEmail('');
+        
+        // Reset success state after 5 seconds so user can subscribe again if needed
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 5000);
+      } else {
+        // Subscription failed - show error message from server
+        setError(data.message || 'Something went wrong. Please try again.');
+      }
+      
+    } catch {
+      // Network error or other exception
+      setError('Unable to connect. Please check your internet connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   // Footer navigation organized by sections
   const footerSections = [
     {
@@ -105,21 +166,53 @@ export default function Footer() {
                 <span>•</span>
                 <span>No spam, ever</span>
               </div>
-              <form className="space-y-4">
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  />
+              {/* Success state - shown after successful subscription */}
+              {isSuccess ? (
+                <div className="bg-green-50 border border-green-200 rounded-md p-4 text-center">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-full mb-3">
+                    <Check className="w-5 h-5 text-green-600" />
+                  </div>
+                  <p className="text-green-800 font-medium">
+                    Thank you for subscribing!
+                  </p>
+                  <p className="text-green-700 text-sm mt-1">
+                    We&apos;re excited to share our latest updates with you.
+                  </p>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-primary !text-white hover:!text-white rounded-md hover:bg-primary-dark transition-colors duration-200 font-semibold"
-                >
-                  Subscribe
-                </button>
-              </form>
+              ) : (
+                /* Newsletter subscription form */
+                <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      required
+                      disabled={isSubmitting}
+                    />
+                    {/* Error message display */}
+                    {error && (
+                      <p className="mt-2 text-sm text-red-600 font-medium">{error}</p>
+                    )}
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || !email}
+                    className="w-full px-6 py-3 bg-primary !text-white hover:!text-white rounded-md hover:bg-primary-dark transition-colors duration-200 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                        Subscribing...
+                      </span>
+                    ) : (
+                      'Subscribe'
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

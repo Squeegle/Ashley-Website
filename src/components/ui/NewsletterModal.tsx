@@ -28,13 +28,14 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
 
   /**
    * Handle form submission
-   * TODO: Connect to actual newsletter service (Mailchimp, ConvertKit, etc.)
+   * Connects to the newsletter subscribe API endpoint
+   * Validates email client-side first, then sends to server for processing
    */
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError('');
 
-    // Basic email validation
+    // Basic email validation (client-side for immediate feedback)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setError('Please enter a valid email address');
@@ -44,23 +45,37 @@ export default function NewsletterModal({ isVisible, onClose }: NewsletterModalP
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - replace with actual newsletter service integration
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // For now, just log the email (replace with actual API call)
-      console.log('Newsletter signup:', email);
-      
-      setIsSuccess(true);
-      
-      // Close modal after success message shows
-      setTimeout(() => {
-        onClose();
-        setIsSuccess(false);
-        setEmail('');
-      }, 2000);
+      // Call the newsletter subscribe API endpoint
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      // Parse the response from the server
+      const data = await response.json();
+
+      // Check if the subscription was successful
+      if (response.ok && data.success) {
+        // Subscription successful - show success state
+        setIsSuccess(true);
+        
+        // Close modal after success message shows (2 second delay)
+        setTimeout(() => {
+          onClose();
+          setIsSuccess(false);
+          setEmail('');
+        }, 2000);
+      } else {
+        // Subscription failed - show error message from server
+        setError(data.message || 'Something went wrong. Please try again.');
+      }
       
     } catch {
-      setError('Something went wrong. Please try again.');
+      // Network error or other exception
+      setError('Unable to connect. Please check your internet connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
